@@ -1,0 +1,153 @@
+.footer {
+  position: relative;
+  z-index: 5;
+  padding: 56px clamp(24px, 6vw, 90px) 40px;
+  border-top: 1px solid var(--line);
+}
+
+.content {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   TOP: LOGO + NAV
+========================================= */
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.6);
+}
+
+.brandName {
+  color: var(--text-hi);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--text-mid);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--blue-soft);
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 28px;
+}
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy {
+  margin: 0;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.3px;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 1.5px;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-mid);
+  font-size: 13px;
+}
+
+.locationIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--blue-soft);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    gap: 16px;
+  }
+
+  .location {
+    font-size: 12.5px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

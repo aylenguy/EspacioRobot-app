@@ -1,0 +1,269 @@
+.section {
+  position: relative;
+  z-index: 5;
+  padding: 100px clamp(24px, 6vw, 90px);
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.eyebrowLine {
+  width: 28px;
+  height: 1px;
+  background: var(--blue);
+}
+
+.title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--text-hi);
+}
+
+.accent {
+  background: linear-gradient(100deg, var(--blue) 10%, var(--orange) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  margin: 0 auto 60px;
+  max-width: 460px;
+  color: var(--text-mid);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: clamp(40px, 6vw, 80px);
+  text-align: left;
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  color: var(--text-hi);
+  font-family: var(--font-display);
+  font-size: 14.5px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  color: var(--text-hi);
+  font-family: var(--font-body, inherit);
+  font-size: 14.5px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-mid);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--blue);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Soy: radios */
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.radioOption {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-mid);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.radioOption input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radioDot {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.radioOption input:checked + .radioDot {
+  border-color: var(--blue);
+}
+
+.radioOption input:checked + .radioDot::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: linear-gradient(100deg, var(--blue) 10%, var(--orange) 90%);
+}
+
+/* Botón enviar */
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 16px 24px;
+  background: var(--orange);
+  border: none;
+  color: #180b03;
+  font-family: var(--font-display);
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 122, 61, 0.25);
+}
+
+.submit:hover {
+  opacity: 0.9;
+}
+
+.submitIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================
+   INFO DE CONTACTO
+========================================= */
+
+.infoBox {
+  padding: 36px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  height: fit-content;
+}
+
+.infoTitle {
+  margin: 0 0 28px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--text-hi);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--blue-soft);
+  border: 1px solid rgba(143, 197, 255, 0.25);
+}
+
+.infoIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.infoLabel {
+  margin: 0 0 4px;
+  color: var(--text-mid);
+  font-size: 12.5px;
+}
+
+.infoValor {
+  margin: 0;
+  color: var(--text-hi);
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

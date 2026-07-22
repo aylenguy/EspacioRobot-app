@@ -1,0 +1,141 @@
+.section {
+  position: relative;
+  z-index: 5;
+  padding: 100px clamp(24px, 6vw, 90px);
+}
+
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.eyebrowLine {
+  width: 28px;
+  height: 1px;
+  background: var(--blue);
+}
+
+.title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--text-hi);
+}
+
+.accent {
+  background: linear-gradient(100deg, var(--blue) 10%, var(--orange) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  margin: 0 auto 60px;
+  max-width: 460px;
+  color: var(--text-mid);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   LISTA DE PREGUNTAS
+========================================= */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-hi);
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: var(--blue-soft);
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+  color: var(--orange);
+}
+
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.answerWrapOpen {
+  grid-template-rows: 1fr;
+}
+
+.answer {
+  overflow: hidden;
+  margin: 0;
+  padding: 0 26px;
+  color: var(--text-mid);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.answerWrapOpen .answer {
+  padding: 0 26px 22px;
+}
+
+/* answerWrap usa grid-template-rows para animar altura sin conocerla de antemano */
+.answerWrap > .answer {
+  min-height: 0;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 520px) {
+  .question {
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+}

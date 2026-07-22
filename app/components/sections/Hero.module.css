@@ -1,0 +1,789 @@
+/* =========================================
+   FONDO
+========================================= */
+
+.gridBg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(rgba(143, 197, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 197, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 90% 80% at 70% 40%,
+      #1c1c22 0%,
+      var(--bg-mid) 45%,
+      var(--bg-deep) 100%
+    );
+
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+.glowOne {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  right: 5%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: rgba(47, 143, 255, 0.08);
+  filter: blur(100px);
+}
+
+.glowTwo {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  bottom: -20%;
+  left: 10%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: rgba(255, 122, 61, 0.04);
+  filter: blur(120px);
+}
+
+/* =========================================
+   SCANLINE
+========================================= */
+
+.scanline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(47, 143, 255, 0.035),
+    transparent
+  );
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  0% { top: -120px; }
+  100% { top: 100%; }
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.statusBar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px, 5vw, 70px);
+  border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+  font-family: var(--font-mono);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dim);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.brandDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.statusRight nav ul {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.statusRight nav a {
+  color: var(--text-mid);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.statusRight nav a:hover {
+  color: var(--blue-soft);
+}
+
+.hudButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 17px;
+  color: var(--orange);
+  border: 1px solid rgba(255, 122, 61, 0.35);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hudButton:hover {
+  background: rgba(255, 122, 61, 0.08);
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.hudButton span {
+  font-size: 14px;
+}
+
+/* Foco visible para navegación por teclado */
+.statusRight nav a:focus-visible,
+.hudButton:focus-visible,
+.btnPrimary:focus-visible,
+.btnGhost:focus-visible {
+  outline: 2px solid var(--blue-soft);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  z-index: 5;
+  min-height: calc(100vh - 65px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 1fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+  padding: 60px clamp(30px, 7vw, 110px) 100px;
+  /* Antes: overflow: hidden -> recortaba la etiqueta lateral y la tarjeta
+     inferior. body ya tiene overflow-x: hidden en globals.css, así que
+     no hace falta repetirlo acá y ya no se pierde nada. */
+}
+
+/* =========================================
+   CONTENIDO IZQUIERDO
+========================================= */
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 650px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.1s;
+}
+
+.eyebrowLine {
+  width: 28px;
+  height: 1px;
+  background: var(--blue);
+}
+
+.headline {
+  margin: 0 0 26px;
+  max-width: 700px;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  color: var(--text-hi);
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.2s;
+}
+
+.accent {
+  display: block;
+  background: linear-gradient(100deg, var(--blue) 10%, #6fa8ff 50%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  max-width: 570px;
+  margin: 0 0 34px;
+  color: var(--text-mid);
+  font-size: 17px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.35s;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.5s;
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 26px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btnPrimary {
+  color: #180b03;
+  background: var(--orange);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 122, 61, 0.25);
+}
+
+.btnPrimary span {
+  font-size: 18px;
+}
+
+.btnGhost {
+  color: var(--text-hi);
+  border: 1px solid rgba(143, 197, 255, 0.18);
+  background: rgba(255, 255, 255, 0.025);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btnGhost:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(143, 197, 255, 0.35);
+}
+
+/* =========================================
+   INSCRIPCIONES ABIERTAS (en el flujo, debajo de los botones)
+========================================= */
+
+.inscripciones {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 28px;
+  padding: 10px 18px;
+  color: var(--text-hi);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  background: rgba(255, 122, 61, 0.08);
+  border: 1px solid rgba(255, 122, 61, 0.35);
+  box-shadow: 0 0 30px rgba(255, 122, 61, 0.12);
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.05s, badgePulse 2.5s ease-in-out infinite 1.2s;
+}
+
+.blinkDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 10px 3px rgba(255, 122, 61, 0.6);
+  animation: blink 1.4s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.15; }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 122, 61, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 122, 61, 0.25);
+  }
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+  display: flex;
+  gap: 35px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(143, 197, 255, 0.1);
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.65s;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--orange);
+  border: 1px solid rgba(255, 122, 61, 0.25);
+  font-size: 13px;
+}
+
+.feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature strong {
+  color: var(--text-hi);
+  font-size: 12px;
+}
+
+.feature div span {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   VISUAL DERECHO
+========================================= */
+
+.heroVisual {
+  position: relative;
+  height: min(650px, 70vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualGlow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(47, 143, 255, 0.2) 0%,
+    rgba(47, 143, 255, 0.05) 45%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.visualGrid {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background:
+    linear-gradient(rgba(143, 197, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 197, 255, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.robotContainer {
+  position: relative;
+  z-index: 3;
+  width: min(90%, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robotHalo {
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 197, 255, 0.2);
+  box-shadow: 0 0 80px rgba(47, 143, 255, 0.15), inset 0 0 80px rgba(47, 143, 255, 0.08);
+  animation: haloRotate 20s linear infinite;
+}
+
+@keyframes haloRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.robotImage {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+  object-fit: contain;
+  border-radius: 16px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 40px rgba(47, 143, 255, 0.2));
+  animation: robotFloat 5s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* =========================================
+   TARJETAS FLOTANTES
+========================================= */
+
+.floatingCard {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(7, 17, 42, 0.86);
+  border: 1px solid rgba(143, 197, 255, 0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.cardTop {
+  top: 12%;
+  right: 0;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+.cardBottom {
+  /* Antes: bottom: 12%; left: 0 -> quedaba pisando el borde inferior de
+     la imagen. La bajamos un poco más para que quede claramente "colgando"
+     por fuera, como una etiqueta adosada, en vez de superpuesta. */
+  bottom: -24px;
+  left: 6%;
+  animation: floatCard 5s ease-in-out infinite 1s;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.cardNumber {
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.cardDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 10px rgba(47, 143, 255, 0.7);
+}
+
+.cardLabel {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.floatingCard strong {
+  color: var(--text-hi);
+  font-size: 12px;
+}
+
+/* =========================================
+   ETIQUETA LATERAL
+========================================= */
+
+.sideLabel {
+  /* Antes: right: -25px combinado con overflow: hidden en .hero la
+     recortaba casi por completo. Ahora queda dentro del contenedor y
+     con mejor contraste. */
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-mid);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  transform: rotate(90deg) translateX(50%);
+  transform-origin: right center;
+}
+
+.sideLabel::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: rgba(143, 197, 255, 0.3);
+}
+
+.sideLabel span {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* =========================================
+   DECORACIÓN
+========================================= */
+
+.decorCircle {
+  position: absolute;
+  left: 47%;
+  top: 50%;
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.circleRingOne,
+.circleRingTwo,
+.circleRingThree {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(143, 197, 255, 0.1);
+}
+
+.circleRingTwo {
+  inset: 70px;
+  border-color: rgba(143, 197, 255, 0.08);
+  border-style: dashed;
+}
+
+.circleRingThree {
+  inset: 160px;
+  border-color: rgba(255, 122, 61, 0.08);
+}
+
+/* =========================================
+   BOTTOM LABEL (izquierda, se mantiene fija abajo)
+========================================= */
+
+.heroBottomLeft {
+  position: absolute;
+  bottom: 22px;
+  left: clamp(20px, 5vw, 70px);
+  z-index: 10;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 30px;
+  }
+
+  .headline {
+    font-size: clamp(48px, 6vw, 70px);
+  }
+
+  .statusRight nav ul {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .statusRight nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
+
+  .heroContent {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    justify-content: center;
+  }
+
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .inscripciones {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .heroVisual {
+    height: 500px;
+    margin-top: 20px;
+  }
+
+  .decorCircle {
+    left: 50%;
+    top: 55%;
+  }
+
+  .sideLabel {
+    display: none;
+  }
+
+  .cardBottom {
+    bottom: -12px;
+    left: 4%;
+  }
+}
+
+@media (max-width: 600px) {
+  .statusBar {
+    padding: 16px 20px;
+  }
+
+  .brand {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .hudButton {
+    padding: 9px 12px;
+  }
+
+  .hero {
+    padding: 55px 20px 90px;
+  }
+
+  .headline {
+    font-size: clamp(44px, 13vw, 60px);
+    letter-spacing: -2px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroVisual {
+    height: 380px;
+  }
+
+  .visualGrid {
+    width: 400px;
+    height: 400px;
+  }
+
+  .visualGlow {
+    width: 350px;
+    height: 350px;
+  }
+
+  .floatingCard {
+    padding: 11px 13px;
+  }
+
+  .cardTop {
+    right: -5px;
+  }
+
+  .cardBottom {
+    left: -5px;
+  }
+
+  .heroBottomLeft {
+    display: none;
+  }
+}

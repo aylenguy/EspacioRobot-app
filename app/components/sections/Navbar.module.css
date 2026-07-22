@@ -1,0 +1,92 @@
+.statusBar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px clamp(20px, 5vw, 70px);
+  border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+  font-family: var(--font-mono);
+}
+
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dim);
+  font-size: 12.5px;
+  letter-spacing: 2px;
+}
+
+
+.brandDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.statusRight nav ul {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.statusRight nav a {
+  color: var(--text-mid);
+  text-decoration: none;
+  font-size: 13.5px;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.statusRight nav a:hover {
+  color: var(--blue-soft);
+}
+
+.statusRight nav a:focus-visible {
+  outline: 2px solid var(--blue-soft);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .statusRight nav ul {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .statusRight nav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .statusBar {
+    padding: 16px 20px;
+  }
+
+  .brand {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
