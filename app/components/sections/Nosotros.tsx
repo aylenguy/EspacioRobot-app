@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import styles from "./Nosotros.module.css";
@@ -8,17 +7,17 @@ const equipoFotos = [
   {
     nombre: "Nombre Apellido",
     rol: "Director General",
-    foto: "/images/persona-1.jpg",
+    foto: "/images/img-persona.webp",
   },
   {
     nombre: "Nombre Apellido",
     rol: "Coordinadora Pedagógica",
-    foto: "/images/persona-1.jpg",
+    foto: "/images/img-persona.webp",
   },
   {
     nombre: "Nombre Apellido",
     rol: "Coordinadora Pedagógica",
- foto: "/images/persona-1.jpg",
+ foto: "/images/img-persona.webp",
   },
 ];
 

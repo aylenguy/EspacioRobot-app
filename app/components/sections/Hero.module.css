@@ -695,6 +695,9 @@
   .inscripciones {
     margin-left: auto;
     margin-right: auto;
+    /* 👇 sobrescribimos el shorthand original para sacar badgePulse:
+       animar box-shadow en loop infinito es caro (no lo acelera la GPU) */
+    animation: fadeUp 0.7s ease forwards 0.05s;
   }
 
   .features {
@@ -719,6 +722,17 @@
   .cardBottom {
     bottom: -12px;
     left: 4%;
+  }
+
+  /* 👇 nuevo: apagamos lo más pesado para la GPU en mobile */
+  .floatingCard {
+    backdrop-filter: none;
+    background: rgba(7, 17, 42, 0.96);
+  }
+
+  .glowOne,
+  .glowTwo {
+    display: none;
   }
 }
 

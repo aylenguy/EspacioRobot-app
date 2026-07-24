@@ -64,7 +64,7 @@ export default function Hero() {
             <div className={styles.robotHalo} />
 
             <Image
-              src="/images/hero-1.png"
+              src="/images/img-hero.webp"
               alt="Alumno aprendiendo robótica y programación"
               width={560}
               height={560}

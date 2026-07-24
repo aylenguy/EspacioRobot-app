@@ -1,4 +1,3 @@
-"use client";
 
 import styles from "./Testimonios.module.css";
 

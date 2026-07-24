@@ -9,8 +9,6 @@
   font-family: var(--font-mono);
 }
 
-
-
 .brand {
   display: flex;
   align-items: center;
@@ -19,7 +17,6 @@
   font-size: 12.5px;
   letter-spacing: 2px;
 }
-
 
 .brandDot {
   width: 7px;
@@ -50,7 +47,6 @@
   padding: 0;
 }
 
-
 .statusRight nav a {
   color: var(--text-mid);
   text-decoration: none;
@@ -68,6 +64,59 @@
   outline-offset: 3px;
 }
 
+/* =========================================
+   BOTÓN HAMBURGUESA
+   Oculto por default (desktop), aparece en mobile
+========================================= */
+
+.menuBtn {
+  display: none;
+  position: relative;
+  z-index: 30;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuBtn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-hi);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menuBtn:focus-visible {
+  outline: 2px solid var(--blue-soft);
+  outline-offset: 3px;
+}
+
+/* Animación a "X" cuando está abierto */
+.menuBtnOpen span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menuBtnOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuBtnOpen span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* =========================================
+   MENÚ DESPLEGABLE MOBILE
+========================================= */
+
+.mobileNav {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .statusRight nav ul {
     gap: 16px;
@@ -77,6 +126,53 @@
 @media (max-width: 900px) {
   .statusRight nav {
     display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 25;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--panel);
+    border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+    transition: max-height 0.3s ease;
+  }
+
+  .mobileNavOpen {
+    max-height: 400px;
+  }
+
+  .mobileNav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 12px clamp(20px, 5vw, 70px) 20px;
+    gap: 4px;
+  }
+
+  .mobileNav a {
+    display: block;
+    padding: 14px 4px;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.2s ease;
+  }
+
+  .mobileNav a:hover,
+  .mobileNav a:focus-visible {
+    color: var(--blue-soft);
   }
 }
 
