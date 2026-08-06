@@ -5,27 +5,41 @@ import { useState } from "react";
 import styles from "./Contacto.module.css";
 
 // Placeholder editable: reemplazá por los datos reales de contacto.
-const WHATSAPP_NUMERO = "5493417482886"; // sin + ni espacios, con código de país
+const WHATSAPP_NUMERO = "5493417499663"; // sin + ni espacios, con código de país
 
 const infoContacto = [
+
+   {
+    label: "WhatsApp",
+    valor: "+54 341 749-9663",
+    icono: "whatsapp" as const,
+    href: `https://wa.me/${WHATSAPP_NUMERO}`,
+  },
+  {
+
+label: "Instagram",
+    valor: "@espaciorobotok",
+    icono: "instagram" as const,
+    href: "https://www.instagram.com/espaciorobotok/",
+},
   {
     label: "Email",
-    valor: "instituto.coding@gmail.com",
+    valor: "info@espaciorobot.com.ar",
     icono: "email" as const,
+    href: "mailto:info@espaciorobot.com.ar",
   },
-  {
-    label: "WhatsApp",
-    valor: "+54 341 748-2886",
-    icono: "whatsapp" as const,
-  },
+ 
   {
     label: "Ubicación",
-    valor: "Rosario, Santa Fe, Argentina",
+    valor: "3 de Febrero 1486, Rosario",
     icono: "ubicacion" as const,
+    href: "https://maps.app.goo.gl/1pHDqAWkV5MFhBhx6",
   },
+
+   
 ];
 
-function Icono({ tipo }: { tipo: "email" | "whatsapp" | "ubicacion" }) {
+function Icono({ tipo }: { tipo: "email" | "whatsapp" | "ubicacion" | "instagram" }) {
   if (tipo === "email") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +72,24 @@ function Icono({ tipo }: { tipo: "email" | "whatsapp" | "ubicacion" }) {
           strokeWidth="1.3"
           strokeLinejoin="round"
         />
+      </svg>
+    );
+  }
+
+  if (tipo === "instagram") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
       </svg>
     );
   }
@@ -206,7 +238,13 @@ export default function Contacto() {
 
             <div className={styles.infoList}>
               {infoContacto.map((item) => (
-                <div key={item.label} className={styles.infoItem}>
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.infoItem}
+                >
                   <span className={styles.infoIcon}>
                     <Icono tipo={item.icono} />
                   </span>
@@ -214,7 +252,7 @@ export default function Contacto() {
                     <p className={styles.infoLabel}>{item.label}</p>
                     <p className={styles.infoValor}>{item.valor}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

@@ -223,6 +223,19 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.infoItem:hover {
+  transform: translateX(4px);
+  opacity: 0.85;
+}
+
+.infoItem:hover .infoIcon {
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .infoIcon {
@@ -234,6 +247,7 @@
   height: 42px;
   color: var(--blue-soft);
   border: 1px solid rgba(143, 197, 255, 0.25);
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .infoIcon svg {

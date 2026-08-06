@@ -10,7 +10,27 @@ type Curso = {
   resumen: string;
   duracion: string;
   contenido: string[];
+  // Valor a precargar en el campo "curso" del Google Form.
+  // Tiene que coincidir EXACTO con una de las opciones del form.
+  formValor: string;
 };
+
+// URL base del Google Form
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd3wo934EoASt0vrmia4p1--YdZpghrr0MMXwql--k-DQuZMw/viewform";
+
+// ID del campo "curso" dentro del form, para precargarlo por URL.
+// Lo sacás desde Google Forms: los 3 puntos → "Obtener enlace con
+// respuestas rellenadas previamente" → completás el campo curso →
+// copiás el número que aparece como entry.XXXXXXXXX
+const FORM_ENTRY_CURSO = "entry.123456789"; // ⚠️ reemplazar por el real
+
+function buildFormUrl(curso: Curso) {
+  const params = new URLSearchParams({
+    [FORM_ENTRY_CURSO]: curso.formValor,
+  });
+  return `${GOOGLE_FORM_URL}?${params.toString()}`;
+}
 
 // Placeholder editable: ajustá título, resumen, duración y contenido
 // de cada curso cuando el cliente te confirme el detalle definitivo.
@@ -21,6 +41,7 @@ const cursos: Curso[] = [
     titulo: "Robótica para Niños",
     resumen: "Primeros pasos armando y programando robots.",
     duracion: "Clases de 1 h 30 min",
+    formValor: "Robótica para Niños",
     contenido: [
       "Introducción a la robótica con kits didácticos",
       "Armado de circuitos simples y motores",
@@ -35,6 +56,7 @@ const cursos: Curso[] = [
     titulo: "Programación con Scratch",
     resumen: "Lógica de programación creando juegos e historias.",
     duracion: "Clases de 1 h 30 min",
+    formValor: "Programación con Scratch",
     contenido: [
       "Lógica de programación por bloques",
       "Secuencias, bucles y condicionales",
@@ -49,6 +71,7 @@ const cursos: Curso[] = [
     titulo: "Inteligencia Artificial",
     resumen: "Herramientas de IA aplicadas a proyectos reales.",
     duracion: "Clases de 1 h 30 min",
+    formValor: "Inteligencia Artificial",
     contenido: [
       "Introducción a conceptos de inteligencia artificial",
       "Uso de herramientas de IA generativa",
@@ -147,8 +170,13 @@ export default function Cursos() {
               ))}
             </ul>
 
-            <a href="#contacto" className={styles.modalCta}>
-              Consultar por este curso
+            <a
+              href={buildFormUrl(activo)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.modalCta}
+            >
+              Inscribirme
               <span>→</span>
             </a>
           </div>
