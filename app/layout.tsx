@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   title: "Espacio Robot",
   description: "Robótica, programación e inteligencia artificial para todas las edades.",
   icons: {
-    icon: "/images/favicon.png",
-    shortcut: "/images/favicon.png",
-    apple: "/images/favicon.png",
+    icon: "/images/favicon-2.png",
+    shortcut: "/images/favicon-2.png",
+    apple: "/images/favicon-2.png",
   },
 };
 
