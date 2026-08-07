@@ -5,20 +5,11 @@ import styles from "./Nosotros.module.css";
 // Placeholder editable: reemplazá nombre, rol y foto real de cada integrante.
 const equipoFotos = [
   {
-    nombre: "Nombre Apellido",
-    rol: "Director General",
+    nombre: "Martín José Artigas",
+    rol: "Coordinador / Director General",
     foto: "/images/img-persona.webp",
   },
-  {
-    nombre: "Nombre Apellido",
-    rol: "Coordinadora Pedagógica",
-    foto: "/images/img-persona.webp",
-  },
-  {
-    nombre: "Nombre Apellido",
-    rol: "Coordinadora Pedagógica",
- foto: "/images/img-persona.webp",
-  },
+ 
 ];
 
 export default function Nosotros() {

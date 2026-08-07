@@ -59,7 +59,7 @@ export default function Footer() {
           <p className={styles.copy}>
             © {anioActual} Espacio Robot. Todos los derechos reservados.
           </p>
-          <p className={styles.tagline}>Robótica · Código · IA</p>
+          <p className={styles.tagline}>Robótica · Impresión 3D · Inteligencia Artificial · Scratch</p>
         </div>
       </div>
     </footer>

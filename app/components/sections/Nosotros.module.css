@@ -145,16 +145,17 @@
 ========================================= */
 
 .fotosGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: clamp(24px, 4vw, 56px);
   text-align: center;
 }
-
 .fotoCard {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 220px; /* mismo ancho que fotoWrap + un poco de aire */
 }
 
 .fotoWrap {
@@ -192,7 +193,6 @@
 
 @media (max-width: 900px) {
   .fotosGrid {
-    grid-template-columns: 1fr;
     gap: 40px;
   }
 }

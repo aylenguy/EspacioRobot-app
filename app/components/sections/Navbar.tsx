@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./Navbar.module.css";
 
 const enlaces = [
   { label: "Cursos", href: "#cursos" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Sedes", href: "#sedes" },
+  //{ label: "Testimonios", href: "#testimonios" },
+   { label: "FAQ", href: "#faq" },
+  { label: "Sede", href: "#sedes" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -17,8 +19,13 @@ export default function Navbar() {
   return (
     <header className={styles.statusBar}>
       <div className={styles.brand}>
-        <span className={styles.brandDot} />
-        <span>ACADEMIA DE TECNOLOGÍA</span>
+        <Image
+          src="/images/logo.png"
+          alt="Espacio Robot"
+          width={150}
+          height={42}
+          priority
+        />
       </div>
 
       <div className={styles.statusRight}>

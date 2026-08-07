@@ -4,38 +4,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px clamp(20px, 5vw, 70px);
-  border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+  padding: 20px clamp(20px, 5vw, 70px);
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono);
+  background: var(--bg-deep);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--text-dim);
-  font-size: 12.5px;
-  letter-spacing: 2px;
+  margin-left: 40px; /* ajustá este valor a gusto */
 }
 
-.brandDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.6);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: scale(0.85); }
-  50% { opacity: 1; transform: scale(1.1); }
+.brand img {
+  display: block;
+  height: auto;
+  width: auto;
 }
 
 .statusRight {
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-right: 40px; /* ajustá este valor a gusto */
 }
 
 .statusRight nav ul {
@@ -51,16 +42,17 @@
   color: var(--text-mid);
   text-decoration: none;
   font-size: 13.5px;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   transition: color 0.2s ease;
 }
 
 .statusRight nav a:hover {
-  color: var(--blue-soft);
+  color: var(--orange);
 }
 
 .statusRight nav a:focus-visible {
-  outline: 2px solid var(--blue-soft);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
 }
 
@@ -92,7 +84,7 @@
 }
 
 .menuBtn:focus-visible {
-  outline: 2px solid var(--blue-soft);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
 }
 
@@ -108,6 +100,8 @@
 .menuBtnOpen span:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg);
 }
+
+
 
 /* =========================================
    MENÚ DESPLEGABLE MOBILE
@@ -142,7 +136,8 @@
     max-height: 0;
     overflow: hidden;
     background: var(--panel);
-    border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 30px rgba(22, 33, 62, 0.08);
     transition: max-height 0.3s ease;
   }
 
@@ -166,13 +161,13 @@
     text-decoration: none;
     font-size: 15px;
     letter-spacing: 0.5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--line);
     transition: color 0.2s ease;
   }
 
   .mobileNav a:hover,
   .mobileNav a:focus-visible {
-    color: var(--blue-soft);
+    color: var(--orange);
   }
 }
 
@@ -181,8 +176,8 @@
     padding: 16px 20px;
   }
 
-  .brand {
-    font-size: 9px;
-    letter-spacing: 1.5px;
+  .brand img {
+    height: 32px;
+    width: auto;
   }
 }

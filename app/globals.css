@@ -1,15 +1,33 @@
+/* =========================================
+   TOKENS — paleta clara "Espacio Robot"
+   Reemplazá el bloque :root actual por este
+========================================= */
+
 :root {
-  --bg-deep: #0a0a0d;
-  --bg-mid: #16161b;
-  --panel: #1e1e24;
+  /* Fondos */
+  --bg-deep: #ffffff;
+  --bg-mid: #f5fbff;
+  --bg-sky: #eaf5ff;
+  --panel: #ffffff;
+
+  /* Marca */
   --blue: #2f8fff;
   --blue-soft: #8fc5ff;
+  --pink: #ff2f7e;
+  --pink-soft: #ffd6e8;
+  --teal: #1f6f78;
+  --teal-soft: #cdeeee;
   --orange: #ff7a3d;
-  --orange-soft: #ffb37f;
-  --text-hi: #f5f7ff;
-  --text-mid: #aab4d9;
-  --text-dim: #6b7499;
-  --line: rgba(255, 255, 255, 0.09);
+  --orange-soft: #ffe1c2;
+  --purple: #9b59f6;
+  --yellow: #ffd93d;
+  --green: #4cd97b;
+
+  /* Texto */
+  --text-hi: #16213e;   /* navy, antes era blanco */
+  --text-mid: #3d4a68;
+  --text-dim: #8a94ab;
+  --line: rgba(22, 33, 62, 0.08);
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -29,7 +47,7 @@ html {
 body {
   background: radial-gradient(
     ellipse 120% 80% at 75% -10%,
-    #1c1c22 0%,
+    var(--bg-sky) 0%,
     var(--bg-mid) 45%,
     var(--bg-deep) 100%
   );

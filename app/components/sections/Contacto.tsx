@@ -114,27 +114,32 @@ export default function Contacto() {
   const [mensaje, setMensaje] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!nombre || !email || !mensaje) return;
+  if (!nombre || !email || !mensaje) return;
 
-    const soyTexto = soy === "padre" ? "Padre/Madre" : "Institución educativa";
+  const soyTexto = soy === "padre" ? "padre/madre" : "una institución educativa";
 
-    const texto = [
-      `Hola! Soy ${nombre} (${soyTexto}).`,
-      `Email: ${email}`,
-      telefono ? `Teléfono: ${telefono}` : null,
-      `Mensaje: ${mensaje}`,
-    ]
-      .filter(Boolean)
-      .join("\n");
+  const texto = [
+    `¡Hola Espacio Robot! 👋`,
+    ``,
+    `Mi nombre es ${nombre}.`,
+    ``,
+    `${mensaje}`,
+    ``,
+    `Mis datos de contacto:`,
+    `📧 ${email}`,
+    telefono ? `📱 ${telefono}` : null,
+  ]
+    .filter(Boolean)
+    .join("\n");
 
-    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-      texto
-    )}`;
+  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
+    texto
+  )}`;
 
-    window.open(url, "_blank");
-  };
+  window.open(url, "_blank");
+};
 
   return (
     <section id="contacto" className={styles.section}>
@@ -233,7 +238,7 @@ export default function Contacto() {
 
           <div className={styles.infoBox}>
             <h3 className={styles.infoTitle}>
-              También podés escribirnos por
+              Información de contacto
             </h3>
 
             <div className={styles.infoList}>

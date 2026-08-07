@@ -9,11 +9,11 @@
   pointer-events: none;
 
   background:
-    linear-gradient(rgba(143, 197, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143, 197, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(47, 143, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 143, 255, 0.05) 1px, transparent 1px),
     radial-gradient(
       ellipse 90% 80% at 70% 40%,
-      #1c1c22 0%,
+      var(--bg-sky) 0%,
       var(--bg-mid) 45%,
       var(--bg-deep) 100%
     );
@@ -30,7 +30,7 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: rgba(47, 143, 255, 0.08);
+  background: rgba(47, 143, 255, 0.10);
   filter: blur(100px);
 }
 
@@ -43,33 +43,16 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: rgba(255, 122, 61, 0.04);
+  background: rgba(255, 122, 61, 0.08);
   filter: blur(120px);
 }
 
-/* =========================================
-   SCANLINE
-========================================= */
-
+/* Scanline eliminado: el efecto "HUD militar" no encaja con la
+   estética clara y amigable que pidió el cliente. Si en algún
+   momento lo necesitás de nuevo, la regla original queda en el
+   historial de git. */
 .scanline {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 120px;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(47, 143, 255, 0.035),
-    transparent
-  );
-  animation: scan 8s linear infinite;
-}
-
-@keyframes scan {
-  0% { top: -120px; }
-  100% { top: 100%; }
+  display: none;
 }
 
 /* =========================================
@@ -83,7 +66,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px clamp(20px, 5vw, 70px);
-  border-bottom: 1px solid rgba(143, 197, 255, 0.1);
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono);
 }
 
@@ -91,7 +74,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-dim);
+  color: var(--text-mid);
   font-size: 11px;
   letter-spacing: 2px;
 }
@@ -101,7 +84,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--blue);
-  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.6);
+  box-shadow: 0 0 8px 2px rgba(47, 143, 255, 0.4);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -128,13 +111,14 @@
 .statusRight nav a {
   color: var(--text-mid);
   text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   transition: color 0.2s ease;
 }
 
 .statusRight nav a:hover {
-  color: var(--blue-soft);
+  color: var(--orange);
 }
 
 .hudButton {
@@ -142,17 +126,18 @@
   align-items: center;
   gap: 10px;
   padding: 10px 17px;
-  color: var(--orange);
-  border: 1px solid rgba(255, 122, 61, 0.35);
+  color: #fff;
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: 8px;
   text-decoration: none;
   font-size: 11px;
   letter-spacing: 1px;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .hudButton:hover {
-  background: rgba(255, 122, 61, 0.08);
-  border-color: var(--orange);
+  background: #ff8f57;
   transform: translateY(-2px);
 }
 
@@ -165,7 +150,7 @@
 .hudButton:focus-visible,
 .btnPrimary:focus-visible,
 .btnGhost:focus-visible {
-  outline: 2px solid var(--blue-soft);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
 }
 
@@ -182,9 +167,6 @@
   align-items: center;
   gap: clamp(40px, 7vw, 100px);
   padding: 60px clamp(30px, 7vw, 110px) 100px;
-  /* Antes: overflow: hidden -> recortaba la etiqueta lateral y la tarjeta
-     inferior. body ya tiene overflow-x: hidden en globals.css, así que
-     no hace falta repetirlo acá y ya no se pierde nada. */
 }
 
 /* =========================================
@@ -202,7 +184,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
-  color: var(--blue-soft);
+  color: var(--teal);
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 3px;
@@ -228,13 +210,25 @@
   animation: fadeUp 0.7s ease forwards 0.2s;
 }
 
+/* En el mockup del cliente "el futuro." no lleva degradé: va del
+   mismo navy que el resto del título, solo en negrita. Si más
+   adelante quieren volver a resaltarlo, dejá el gradient de acá
+   abajo comentado como referencia. */
 .accent {
   display: block;
-  background: linear-gradient(100deg, var(--blue) 10%, #6fa8ff 50%, var(--orange) 100%);
+  color: var(--text-hi);
+  font-weight: 700;
+}
+
+/* Versión con degradé (por si el cliente la pide más adelante):
+.accent {
+  display: block;
+  background: linear-gradient(100deg, var(--blue) 10%, var(--teal) 50%, var(--pink) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+*/
 
 .lead {
   max-width: 570px;
@@ -270,18 +264,19 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
+  border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .btnPrimary {
-  color: #180b03;
-  background: var(--orange);
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  color: #fff;
+  background: var(--pink);
 }
 
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 122, 61, 0.25);
+  box-shadow: 0 12px 30px rgba(255, 47, 126, 0.28);
+  background: #ff4c8f;
 }
 
 .btnPrimary span {
@@ -289,20 +284,19 @@
 }
 
 .btnGhost {
-  color: var(--text-hi);
-  border: 1px solid rgba(143, 197, 255, 0.18);
-  background: rgba(255, 255, 255, 0.025);
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  color: #fff;
+  background: var(--teal);
+  border: 1px solid var(--teal);
 }
 
 .btnGhost:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(143, 197, 255, 0.35);
+  box-shadow: 0 12px 30px rgba(31, 111, 120, 0.25);
+  background: #245e66;
 }
 
 /* =========================================
-   INSCRIPCIONES ABIERTAS (en el flujo, debajo de los botones)
+   INSCRIPCIONES ABIERTAS
 ========================================= */
 
 .inscripciones {
@@ -312,16 +306,25 @@
   width: fit-content;
   margin-bottom: 28px;
   padding: 10px 18px;
-  color: var(--text-hi);
+  color: var(--orange);
+  text-decoration: none;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 2px;
-  font-weight: 600;
-  background: rgba(255, 122, 61, 0.08);
+  font-weight: 700;
+  background: var(--orange-soft);
   border: 1px solid rgba(255, 122, 61, 0.35);
-  box-shadow: 0 0 30px rgba(255, 122, 61, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(255, 122, 61, 0.08);
   opacity: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: fadeUp 0.7s ease forwards 0.05s, badgePulse 2.5s ease-in-out infinite 1.2s;
+}
+
+.inscripciones:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 122, 61, 0.22);
 }
 
 .blinkDot {
@@ -329,7 +332,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--orange);
-  box-shadow: 0 0 10px 3px rgba(255, 122, 61, 0.6);
+  box-shadow: 0 0 10px 3px rgba(255, 122, 61, 0.5);
   animation: blink 1.4s step-start infinite;
 }
 
@@ -339,10 +342,10 @@
 
 @keyframes badgePulse {
   0%, 100% {
-    box-shadow: 0 0 30px rgba(255, 122, 61, 0.12);
+    box-shadow: 0 0 20px rgba(255, 122, 61, 0.08);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 122, 61, 0.25);
+    box-shadow: 0 0 30px rgba(255, 122, 61, 0.18);
   }
 }
 
@@ -355,7 +358,7 @@
   gap: 35px;
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid rgba(143, 197, 255, 0.1);
+  border-top: 1px solid var(--line);
   opacity: 0;
   animation: fadeUp 0.7s ease forwards 0.65s;
 }
@@ -373,7 +376,9 @@
   width: 30px;
   height: 30px;
   color: var(--orange);
-  border: 1px solid rgba(255, 122, 61, 0.25);
+  background: var(--orange-soft);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 122, 61, 0.2);
   font-size: 13px;
 }
 
@@ -414,8 +419,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(47, 143, 255, 0.2) 0%,
-    rgba(47, 143, 255, 0.05) 45%,
+    rgba(47, 143, 255, 0.14) 0%,
+    rgba(47, 143, 255, 0.04) 45%,
     transparent 70%
   );
   filter: blur(10px);
@@ -432,12 +437,12 @@
   width: 600px;
   height: 600px;
   background:
-    linear-gradient(rgba(143, 197, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143, 197, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(47, 143, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 143, 255, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(circle, black 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(circle, black 0%, transparent 70%);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* =========================================
@@ -451,21 +456,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 6px;
+  border-radius: 26px;
+  /* marco degradé multicolor, como en el mockup */
+  background: linear-gradient(135deg, var(--green), var(--blue), var(--purple), var(--orange));
+  box-shadow: 0 20px 50px rgba(22, 33, 62, 0.15);
 }
 
+/* El halo giratorio tipo radar no aparece en el mockup del cliente;
+   lo apagamos en vez de borrarlo por si lo quieren retomar. */
 .robotHalo {
-  position: absolute;
-  width: 65%;
-  height: 65%;
-  border-radius: 50%;
-  border: 1px solid rgba(143, 197, 255, 0.2);
-  box-shadow: 0 0 80px rgba(47, 143, 255, 0.15), inset 0 0 80px rgba(47, 143, 255, 0.08);
-  animation: haloRotate 20s linear infinite;
-}
-
-@keyframes haloRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  display: none;
 }
 
 .robotImage {
@@ -474,8 +475,9 @@
   height: auto;
   max-width: 560px;
   object-fit: contain;
-  border-radius: 16px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 40px rgba(47, 143, 255, 0.2));
+  border-radius: 20px;
+  display: block;
+  filter: none;
   animation: robotFloat 5s ease-in-out infinite;
 }
 
@@ -495,24 +497,23 @@
   align-items: center;
   gap: 12px;
   padding: 14px 18px;
-  background: rgba(7, 17, 42, 0.86);
-  border: 1px solid rgba(143, 197, 255, 0.18);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(22, 33, 62, 0.12);
 }
 
 .cardTop {
   top: 12%;
   right: 0;
+  background: var(--blue-soft);
   animation: floatCard 5s ease-in-out infinite;
 }
 
 .cardBottom {
-  /* Antes: bottom: 12%; left: 0 -> quedaba pisando el borde inferior de
-     la imagen. La bajamos un poco más para que quede claramente "colgando"
-     por fuera, como una etiqueta adosada, en vez de superpuesta. */
   bottom: -24px;
   left: 6%;
+  background: var(--pink-soft);
   animation: floatCard 5s ease-in-out infinite 1s;
 }
 
@@ -524,6 +525,7 @@
 .cardNumber {
   color: var(--orange);
   font-family: var(--font-mono);
+  font-weight: 700;
   font-size: 11px;
 }
 
@@ -531,14 +533,14 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 10px rgba(47, 143, 255, 0.7);
+  background: var(--orange);
+  box-shadow: 0 0 10px rgba(255, 122, 61, 0.5);
 }
 
 .cardLabel {
   display: block;
   margin-bottom: 3px;
-  color: var(--text-dim);
+  color: var(--text-mid);
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 1.5px;
@@ -554,19 +556,17 @@
 ========================================= */
 
 .sideLabel {
-  /* Antes: right: -25px combinado con overflow: hidden en .hero la
-     recortaba casi por completo. Ahora queda dentro del contenedor y
-     con mejor contraste. */
   position: absolute;
   right: 6px;
   top: 50%;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-mid);
+  color: var(--teal);
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 2px;
+  font-weight: 600;
   transform: rotate(90deg) translateX(50%);
   transform-origin: right center;
 }
@@ -575,12 +575,12 @@
   content: "";
   width: 20px;
   height: 1px;
-  background: rgba(143, 197, 255, 0.3);
+  background: var(--teal);
 }
 
 .sideLabel span {
   color: var(--orange);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* =========================================
@@ -595,7 +595,7 @@
   height: 700px;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .circleRingOne,
@@ -604,22 +604,24 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(143, 197, 255, 0.1);
+  border: 1px solid rgba(47, 143, 255, 0.15);
 }
 
 .circleRingTwo {
   inset: 70px;
-  border-color: rgba(143, 197, 255, 0.08);
+  border-color: rgba(155, 89, 246, 0.15);
   border-style: dashed;
 }
 
 .circleRingThree {
   inset: 160px;
-  border-color: rgba(255, 122, 61, 0.08);
+  border-color: rgba(255, 122, 61, 0.15);
 }
 
+
+
 /* =========================================
-   BOTTOM LABEL (izquierda, se mantiene fija abajo)
+   BOTTOM LABEL
 ========================================= */
 
 .heroBottomLeft {
@@ -695,8 +697,6 @@
   .inscripciones {
     margin-left: auto;
     margin-right: auto;
-    /* 👇 sobrescribimos el shorthand original para sacar badgePulse:
-       animar box-shadow en loop infinito es caro (no lo acelera la GPU) */
     animation: fadeUp 0.7s ease forwards 0.05s;
   }
 
@@ -724,10 +724,8 @@
     left: 4%;
   }
 
-  /* 👇 nuevo: apagamos lo más pesado para la GPU en mobile */
   .floatingCard {
     backdrop-filter: none;
-    background: rgba(7, 17, 42, 0.96);
   }
 
   .glowOne,

@@ -6,12 +6,18 @@ const WHATSAPP_NUMERO = "5493417499663";
 // Usuario de Instagram sin @.
 const INSTAGRAM_USUARIO = "espaciorobotok";
 
+// Mensaje pre-cargado al abrir WhatsApp desde el botón flotante.
+const WHATSAPP_MENSAJE =
+  "¡Hola Espacio Robot! Quiero info de los cursos.";
+
 export default function FloatingButtons() {
   return (
     <div className={styles.wrapper}>
       {/* WhatsApp */}
       <a
-        href={`https://wa.me/${WHATSAPP_NUMERO}`}
+        href={`https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
+          WHATSAPP_MENSAJE
+        )}`}
         target="_blank"
         rel="noopener noreferrer"
         className={`${styles.button} ${styles.whatsapp}`}
@@ -56,18 +62,8 @@ export default function FloatingButtons() {
             stroke="currentColor"
             strokeWidth="1.7"
           />
-          <circle
-            cx="12"
-            cy="12"
-            r="1.4"
-            fill="currentColor"
-          />
-          <circle
-            cx="17.4"
-            cy="6.6"
-            r="1.3"
-            fill="currentColor"
-          />
+          <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+          <circle cx="17.4" cy="6.6" r="1.3" fill="currentColor" />
         </svg>
       </a>
     </div>

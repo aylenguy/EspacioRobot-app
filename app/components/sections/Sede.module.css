@@ -1,0 +1,208 @@
+.section {
+  position: relative;
+  z-index: 5;
+  padding: 100px clamp(24px, 6vw, 90px);
+}
+
+/* =========================================
+   HEADER DE SECCIÓN
+========================================= */
+
+.header {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -1px;
+  color: var(--text-hi);
+}
+
+.accent {
+  background: linear-gradient(100deg, var(--blue) 10%, var(--orange) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-mid);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* CONTENEDOR 50 / 50 */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 520px;
+  border: 1px solid var(--line);
+
+  /* evita bugs con grid + overflow */
+  align-items: stretch;
+
+  clip-path: polygon(
+    20px 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%,
+    0 20px
+  );
+  overflow: hidden;
+}
+
+/* =========================================
+   MITAD IZQUIERDA — IMAGEN
+========================================= */
+
+.imageHalf {
+  position: relative;
+  width: 100%;
+  height: 100%; /* clave para que llene */
+  min-height: 320px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 8, 0) 40%,
+    rgba(6, 6, 8, 0.75) 100%
+  );
+}
+
+.imageCaption {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  z-index: 2;
+}
+
+.imageLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue-soft);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.imageTitle {
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 28px;
+}
+
+/* =========================================
+   MITAD DERECHA — MAPA
+========================================= */
+
+.mapHalf {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* mejor distribución */
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  height: 100%;
+}
+
+.mapAddress {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--text-mid);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.mapDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 8px 2px rgba(255, 122, 61, 0.5);
+  flex-shrink: 0;
+}
+
+.mapFrameWrap {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 260px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block; /* evita espacios raros */
+  filter: grayscale(0.15) contrast(1.05);
+}
+
+.mapCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #180b03;
+  background: var(--orange);
+  padding: 13px 22px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mapCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 122, 61, 0.25);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .imageHalf {
+    min-height: 260px;
+  }
+
+  .mapFrameWrap {
+    min-height: 320px;
+  }
+}
