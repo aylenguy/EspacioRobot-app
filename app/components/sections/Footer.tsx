@@ -1,5 +1,4 @@
-
-
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 const enlaces = [
@@ -21,8 +20,13 @@ export default function Footer() {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <span className={styles.brandDot} />
-            <span className={styles.brandName}>ESPACIO ROBOT</span>
+            <Image
+              src="/images/logo-robot.png"
+              alt="Espacio Robot"
+              width={150}
+              height={42}
+              style={{ height: "60px", width: "auto" }}
+            />
           </div>
 
           <nav className={styles.nav}>

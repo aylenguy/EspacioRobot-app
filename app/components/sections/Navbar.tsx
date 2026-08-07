@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className={styles.statusBar}>
       <div className={styles.brand}>
         <Image
-          src="/images/logo.png"
+          src="/images/logo-robot.png"
           alt="Espacio Robot"
           width={150}
           height={42}

@@ -105,7 +105,7 @@ const cursos: Curso[] = [
       "Resolución de problemas paso a paso",
     ],
     card: {
-      imagen: "/images/curso--2.png", // ⚠️ ajustar si el nombre real es distinto
+      imagen: "/images/curso---2.png", // ⚠️ ajustar si el nombre real es distinto
       descripcion:
         "Un espacio técnico y creativo donde los chicos aprenden a transformar sus ideas en objetos reales. A través de herramientas de modelado tridimensional, exploran los principios del diseño y la fabricación digital, desarrollando la noción espacial y la resolución de problemas paso a paso.",
       callouts: [
