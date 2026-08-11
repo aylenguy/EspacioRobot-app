@@ -23,8 +23,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Espacio Robot",
-  description: "Robótica, programación e inteligencia artificial para todas las edades.",
+  metadataBase: new URL("https://espaciorobot.vercel.app"), // TODO: reemplazar cuando compres el dominio
+  title: {
+    default: "Espacio Robot - Cursos de robótica en Rosario",
+    template: "%s | Espacio Robot",
+  },
+  description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial mediante clases prácticas en Rosario. ¡Inscripciones abiertas!",
+  keywords: [
+    "robótica",
+    "cursos de robótica",
+    "programación para chicos",
+    "inteligencia artificial",
+    "clases de robótica Rosario",
+    "Espacio Robot",
+  ],
   icons: {
     icon: [
       { url: "/images/favicon--32x32.png", sizes: "32x32", type: "image/png" },
@@ -33,8 +45,48 @@ export const metadata: Metadata = {
     ],
     apple: "/images/apple--icon.png",
   },
+  openGraph: {
+    title: "Espacio Robot - Cursos de robótica en Rosario",
+    description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
+    url: "https://espaciorobot.vercel.app",
+    siteName: "Espacio Robot",
+    images: [
+      {
+        url: "/images/robot-ubicacion.jpeg",
+        width: 1600,
+        height: 1067,
+        alt: "Fachada de Espacio Robot",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Espacio Robot - Cursos de robótica en Rosario",
+    description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
+     images: ["/images/robot-ubicacion.jpeg"],
+  },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Espacio Robot",
+  description: "Escuela de robótica, programación e inteligencia artificial para chicos, adolescentes y adultos en Rosario.",
+  url: "https://espaciorobot.vercel.app",
+  logo: "https://espaciorobot.vercel.app/images/logo-robot.png",
+  image: "https://espaciorobot.vercel.app/images/robot-ubicacion.jpeg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3 de Febrero 1486",
+    addressLocality: "Rosario",
+    addressRegion: "Santa Fe",
+    postalCode: "S2000",
+    addressCountry: "AR",
+  },
+  telephone: "+5493417499663",
+};
 
 export default function RootLayout({
   children,
@@ -46,6 +98,10 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         {children}
         <FloatingButtons />
