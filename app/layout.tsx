@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://espaciorobot.vercel.app"), // TODO: reemplazar cuando compres el dominio
+  metadataBase: new URL("https://espacio-robot-app.vercel.app"), // TODO: reemplazar cuando compres el dominio
   title: {
     default: "Espacio Robot - Cursos de robótica en Rosario",
     template: "%s | Espacio Robot",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Espacio Robot - Cursos de robótica en Rosario",
     description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
-    url: "https://espaciorobot.vercel.app",
+    url: "https://espacio-robot-app.vercel.app",
     siteName: "Espacio Robot",
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Espacio Robot - Cursos de robótica en Rosario",
     description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
-     images: ["/images/robot-ubicacion.jpeg"],
+    images: ["/images/robot-ubicacion.jpeg"],
   },
 };
 
@@ -74,9 +74,9 @@ const jsonLd = {
   "@type": "EducationalOrganization",
   name: "Espacio Robot",
   description: "Escuela de robótica, programación e inteligencia artificial para chicos, adolescentes y adultos en Rosario.",
-  url: "https://espaciorobot.vercel.app",
-  logo: "https://espaciorobot.vercel.app/images/logo-robot.png",
-  image: "https://espaciorobot.vercel.app/images/robot-ubicacion.jpeg",
+  url: "https://espacio-robot-app.vercel.app",
+  logo: "https://espacio-robot-app.vercel.app/images/logo-robot.png",
+  image: "https://espacio-robot-app.vercel.app/images/robot-ubicacion.jpeg",
   address: {
     "@type": "PostalAddress",
     streetAddress: "3 de Febrero 1486",
