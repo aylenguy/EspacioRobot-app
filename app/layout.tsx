@@ -27,13 +27,15 @@ export const metadata: Metadata = {
   description: "Robótica, programación e inteligencia artificial para todas las edades.",
   icons: {
     icon: [
-      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/images/favicon.ico", sizes: "any" },
+      { url: "/images/favicon--32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon--16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/favicon-.ico", sizes: "any" },
     ],
-    apple: "/images/apple-icon-180x180.png",
+    apple: "/images/apple--icon.png",
   },
 };
+
+
 export default function RootLayout({
   children,
 }: {
