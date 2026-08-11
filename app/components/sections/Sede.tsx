@@ -31,7 +31,7 @@ export default function Sede() {
         {/* IZQUIERDA — IMAGEN */}
         <div className={styles.imageHalf}>
           <Image
-            src="/images/sede.jpg" // asegurate que exista
+            src="/images/robot-ubicacion.jpeg"
             alt="Espacio Robot"
             fill
             className={styles.image}
