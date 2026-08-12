@@ -74,9 +74,9 @@ const jsonLd = {
   "@type": "EducationalOrganization",
   name: "Espacio Robot",
   description: "Escuela de robótica, programación e inteligencia artificial para chicos, adolescentes y adultos en Rosario.",
-  url: "https://espacio-robot-app.vercel.app",
-  logo: "https://espacio-robot-app.vercel.app/images/logo-robot.png",
-  image: "https://espacio-robot-app.vercel.app/images/robot-ubicacion.jpeg",
+  url: "https://www.espaciorobot.com.ar",
+  logo: "https://www.espaciorobot.com.ar/images/logo-robot.png",
+  image: "https://www.espaciorobot.com.ar/images/robot-ubicacion.jpeg",
   address: {
     "@type": "PostalAddress",
     streetAddress: "3 de Febrero 1486",
