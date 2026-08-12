@@ -37,6 +37,11 @@ export const metadata: Metadata = {
     "clases de robótica Rosario",
     "Espacio Robot",
   ],
+
+    verification: {
+    google: "YDOqVD845_YbOypZ-dje5QaGgxeycKWBzYtkmIUYjUg",
+  },
+  
   icons: {
     icon: [
       { url: "/images/favicon--32x32.png", sizes: "32x32", type: "image/png" },
