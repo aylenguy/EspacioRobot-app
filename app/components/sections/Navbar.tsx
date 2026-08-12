@@ -29,7 +29,7 @@ export default function Navbar() {
       </div>
 
       <div className={styles.statusRight}>
-        <nav>
+        <nav aria-label="Menú principal">
           <ul>
             {enlaces.map((item) => (
               <li key={item.href}>
@@ -54,6 +54,7 @@ export default function Navbar() {
 
       {/* Menú mobile desplegable */}
       <nav
+        aria-label="Menú móvil"
         className={`${styles.mobileNav} ${
           menuAbierto ? styles.mobileNavOpen : ""
         }`}

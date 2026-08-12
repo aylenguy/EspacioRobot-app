@@ -91,64 +91,64 @@ const cursos: Curso[] = [
     },
   },
   {
-    id: "impresion-3d-ninos",
-    numero: "02",
-    titulo: "Impresión 3D para Niños",
-    resumen: "Diseño y modelado 3D para dar vida a tus ideas.",
-    duracion: "Clases de 1 h 30 min",
-    formValor: "Impresión 3D para Niños",
-    contenido: [
-      "Introducción al diseño y modelado 3D",
-      "Uso de herramientas de modelado tridimensional",
-      "Principios básicos de fabricación digital",
-      "Desarrollo de la noción espacial",
-      "Resolución de problemas paso a paso",
+  id: "robotica-inicial",
+  numero: "02",
+  titulo: "Robótica Educativa Inicial",
+  resumen: "Primeros pasos en robótica con juegos y construcciones.",
+  duracion: "Clases de 1 h 30 min",
+  formValor: "Robótica Educativa Inicial",
+  contenido: [
+    "Introducción a engranajes, sensores y poleas",
+    "Mecanismos simples y su funcionamiento",
+    "Programación de robots propios",
+    "Desafíos progresivos según el ritmo del alumno",
+    "Desarrollo de pensamiento lógico y trabajo en equipo",
+  ],
+  card: {
+    imagen: "/images/curso--6.png", // ⚠️ ajustar al nombre real del archivo
+    descripcion:
+      "Un espacio práctico y dinámico para adentrarse en la tecnología. Mediante juegos y construcciones, los chicos aprenden sobre engranajes, sensores, poleas y mecanismos simples, programando sus propios robots para darles vida. La propuesta desarrolla el pensamiento lógico y el trabajo en equipo con desafíos que avanzan gradualmente al ritmo de cada alumno.",
+    callouts: [
+      { texto: "Ideal para dar los primeros pasos en robótica.", variante: "blue" },
     ],
-    card: {
-      imagen: "/images/curso---2.png", // ⚠️ ajustar si el nombre real es distinto
-      descripcion:
-        "Un espacio técnico y creativo donde los chicos aprenden a transformar sus ideas en objetos reales. A través de herramientas de modelado tridimensional, exploran los principios del diseño y la fabricación digital, desarrollando la noción espacial y la resolución de problemas paso a paso.",
-      callouts: [
-        { texto: "Ideal para materializar la imaginación.", variante: "orange" },
-      ],
-      edad: "10 a 13 años",
-      inscripcion: "$ 30.000",
-      cuota: "$ 80.000 (insumos incl.)",
-      colorFrom: "#f2790c",
-      colorTo: "#ff9f42",
-      imagenAncho: 150,
-    },
+    edad: "6 a 12 años",
+    inscripcion: "$ 30.000",
+    cuota: "$ 70.000",
+    colorFrom: "#2f5fdb",
+    colorTo: "#4d7fff",
+    imagenAncho: 150,
   },
-  {
-    id: "inteligencia-artificial",
-    numero: "03",
-    titulo: "Inteligencia Artificial para Niños",
-    resumen: "Herramientas de IA aplicadas a proyectos reales.",
-    duracion: "Clases de 1 h 30 min",
-    formValor: "Inteligencia Artificial para Niños",
-    contenido: [
-      "Introducción a conceptos de inteligencia artificial",
-      "Uso de herramientas de IA generativa",
-      "Creación y ajuste de prompts",
-      "Nociones básicas de machine learning",
-      "Proyecto práctico aplicando IA a un caso real",
-    ],
-    card: {
-      imagen: "/images/curso--3.png", // ⚠️ ajustar si el nombre real es distinto
-      descripcion:
-        "Un taller 100% interactivo y creativo donde los chicos aprenden a transformar sus ideas usando la tecnología más moderna. Mediante la experimentación guiada y el juego, los participantes descubren el universo de la IA creando sus propios cuentos, ilustraciones, canciones y proyectos digitales. La propuesta estimula la imaginación, el pensamiento crítico y el uso responsable de las herramientas digitales.",
-      callouts: [
-        { texto: "Ideal para explorar el arte y la narrativa del futuro.", variante: "green" },
-      ],
-      edad: "7 a 12 años",
-      inscripcion: "$ 30.000",
-      cuota: "$ 70.000",
-      colorFrom: "#3fae63",
-      colorTo: "#63c98a",
-      imagenAncho: 150,
-    },
+},
+{
+  id: "robotica-avanzada",
+  numero: "03",
+  titulo: "Robótica Educativa Avanzada",
+  resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
+  duracion: "Clases de 1 h 30 min",
+  formValor: "Robótica Educativa Avanzada",
+  contenido: [
+    "Diseño y armado de máquinas complejas",
+    "Programación de rutinas avanzadas",
+    "Interacción entre dispositivos",
+    "Proyectos colaborativos",
+    "Resolución de problemas reales",
+  ],
+  card: {
+    imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
+    descripcion:
+      "Diseñado para quienes completaron el nivel inicial y buscan nuevos retos tecnológicos. En este taller se potencian el pensamiento analítico, la concentración y la creatividad resolviendo problemas reales. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos.",
+    callouts: [
+  { texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel.", variante: "purple" },
+  { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
+],
+    edad: "9 a 13 años",
+    inscripcion: "$ 30.000",
+    cuota: "$ 70.000",
+    colorFrom: "#7c3aed",
+    colorTo: "#a78bfa",
   },
-  {
+},
+ {
     id: "programacion-scratch",
     numero: "04",
     titulo: "Programación con Scratch",
@@ -176,64 +176,67 @@ const cursos: Curso[] = [
       colorTo: "#1cc7c9",
     },
   },
+  
   {
-  id: "robotica-avanzada",
-  numero: "05",
-  titulo: "Robótica Educativa Avanzada",
-  resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
-  duracion: "Clases de 1 h 30 min",
-  formValor: "Robótica Educativa Avanzada",
-  contenido: [
-    "Diseño y armado de máquinas complejas",
-    "Programación de rutinas avanzadas",
-    "Interacción entre dispositivos",
-    "Proyectos colaborativos",
-    "Resolución de problemas reales",
-  ],
-  card: {
-    imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
-    descripcion:
-      "Diseñado para quienes completaron el nivel inicial y buscan nuevos retos tecnológicos. En este taller se potencian el pensamiento analítico, la concentración y la creatividad resolviendo problemas reales. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos.",
-    callouts: [
-  { texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel.", variante: "purple" },
-  { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
-],
-    edad: "9 a 13 años",
-    inscripcion: "$ 30.000",
-    cuota: "$ 70.000",
-    colorFrom: "#7c3aed",
-    colorTo: "#a78bfa",
-  },
-},
-{
-  id: "robotica-inicial",
-  numero: "06",
-  titulo: "Robótica Educativa Inicial",
-  resumen: "Primeros pasos en robótica con juegos y construcciones.",
-  duracion: "Clases de 1 h 30 min",
-  formValor: "Robótica Educativa Inicial",
-  contenido: [
-    "Introducción a engranajes, sensores y poleas",
-    "Mecanismos simples y su funcionamiento",
-    "Programación de robots propios",
-    "Desafíos progresivos según el ritmo del alumno",
-    "Desarrollo de pensamiento lógico y trabajo en equipo",
-  ],
-  card: {
-    imagen: "/images/curso--6.png", // ⚠️ ajustar al nombre real del archivo
-    descripcion:
-      "Un espacio práctico y dinámico para adentrarse en la tecnología. Mediante juegos y construcciones, los chicos aprenden sobre engranajes, sensores, poleas y mecanismos simples, programando sus propios robots para darles vida. La propuesta desarrolla el pensamiento lógico y el trabajo en equipo con desafíos que avanzan gradualmente al ritmo de cada alumno.",
-    callouts: [
-      { texto: "Ideal para dar los primeros pasos en robótica.", variante: "blue" },
+    id: "impresion-3d-ninos",
+    numero: "05",
+    titulo: "Impresión 3D para Niños",
+    resumen: "Diseño y modelado 3D para dar vida a tus ideas.",
+    duracion: "Clases de 1 h 30 min",
+    formValor: "Impresión 3D para Niños",
+    contenido: [
+      "Introducción al diseño y modelado 3D",
+      "Uso de herramientas de modelado tridimensional",
+      "Principios básicos de fabricación digital",
+      "Desarrollo de la noción espacial",
+      "Resolución de problemas paso a paso",
     ],
-    edad: "6 a 12 años",
-    inscripcion: "$ 30.000",
-    cuota: "$ 70.000",
-    colorFrom: "#2f5fdb",
-    colorTo: "#4d7fff",
-    imagenAncho: 150,
+    card: {
+      imagen: "/images/curso---2.png", 
+      descripcion:
+        "Un espacio técnico y creativo donde los chicos aprenden a transformar sus ideas en objetos reales. A través de herramientas de modelado tridimensional, exploran los principios del diseño y la fabricación digital, desarrollando la noción espacial y la resolución de problemas paso a paso.",
+      callouts: [
+        { texto: "Ideal para materializar la imaginación.", variante: "orange" },
+      ],
+      edad: "10 a 13 años",
+      inscripcion: "$ 30.000",
+      cuota: "$ 80.000 (insumos incl.)",
+      colorFrom: "#f2790c",
+      colorTo: "#ff9f42",
+      imagenAncho: 150,
+    },
   },
-},
+  {
+    id: "inteligencia-artificial",
+    numero: "06",
+    titulo: "Inteligencia Artificial para Niños",
+    resumen: "Herramientas de IA aplicadas a proyectos reales.",
+    duracion: "Clases de 1 h 30 min",
+    formValor: "Inteligencia Artificial para Niños",
+    contenido: [
+      "Introducción a conceptos de inteligencia artificial",
+      "Uso de herramientas de IA generativa",
+      "Creación y ajuste de prompts",
+      "Nociones básicas de machine learning",
+      "Proyecto práctico aplicando IA a un caso real",
+    ],
+    card: {
+      imagen: "/images/curso--3.png", // ⚠️ ajustar si el nombre real es distinto
+      descripcion:
+        "Un taller 100% interactivo y creativo donde los chicos aprenden a transformar sus ideas usando la tecnología más moderna. Mediante la experimentación guiada y el juego, los participantes descubren el universo de la IA creando sus propios cuentos, ilustraciones, canciones y proyectos digitales. La propuesta estimula la imaginación, el pensamiento crítico y el uso responsable de las herramientas digitales.",
+      callouts: [
+        { texto: "Ideal para explorar el arte y la narrativa del futuro.", variante: "green" },
+      ],
+      edad: "7 a 12 años",
+      inscripcion: "$ 30.000",
+      cuota: "$ 70.000",
+      colorFrom: "#3fae63",
+      colorTo: "#63c98a",
+      imagenAncho: 150,
+    },
+  },
+ 
+
 ];
 
 function CardSimple({
@@ -289,9 +292,9 @@ function CardDestacadaPreview({
       </div>
 
       <div className={styles.cardFullImageWrap}>
-        <Image
-          src={card.imagen}
-          alt={curso.titulo}
+      <Image
+  src={card.imagen}
+  alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
           width={220}
           height={220}
           className={styles.cardFullImage}
@@ -370,9 +373,9 @@ function ModalDestacado({
         </div>
 
         <div className={styles.cardFullImageWrap}>
-          <Image
-            src={card.imagen}
-            alt={curso.titulo}
+        <Image
+  src={card.imagen}
+  alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
             width={220}
             height={220}
             className={styles.cardFullImage}

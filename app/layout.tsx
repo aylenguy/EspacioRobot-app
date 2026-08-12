@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://espacio-robot-app.vercel.app"), // TODO: reemplazar cuando compres el dominio
+  metadataBase: new URL("https://www.espaciorobot.com.ar"), 
   title: {
-    default: "Espacio Robot - Cursos de robótica en Rosario",
+    default: "Espacio Robot - Cursos y talleres de robótica en Rosario",
     template: "%s | Espacio Robot",
   },
   description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial mediante clases prácticas en Rosario. ¡Inscripciones abiertas!",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Espacio Robot - Cursos de robótica en Rosario",
     description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
-    url: "https://espacio-robot-app.vercel.app",
+    url: "https://www.espaciorobot.com.ar",
     siteName: "Espacio Robot",
     images: [
       {

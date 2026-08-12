@@ -102,7 +102,6 @@
 }
 
 
-
 /* =========================================
    MENÚ DESPLEGABLE MOBILE
 ========================================= */
@@ -122,8 +121,17 @@
     display: none;
   }
 
+  .statusRight {
+    display: none; /* ya no aporta nada visible en mobile */
+  }
+
+  .brand {
+    margin-left: 0; /* logo pegado a la izquierda */
+  }
+
   .menuBtn {
     display: flex;
+    
   }
 
   .mobileNav {

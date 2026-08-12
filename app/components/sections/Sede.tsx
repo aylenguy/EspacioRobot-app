@@ -28,11 +28,11 @@ export default function Sede() {
 
       <div className={styles.split}>
         
-        {/* IZQUIERDA — IMAGEN */}
+     {/* IZQUIERDA — IMAGEN */}
         <div className={styles.imageHalf}>
           <Image
             src="/images/robot-ubicacion.jpeg"
-            alt="Espacio Robot"
+            alt="Fachada de Espacio Robot en 3 de Febrero 1486, Rosario"
             fill
             className={styles.image}
             priority

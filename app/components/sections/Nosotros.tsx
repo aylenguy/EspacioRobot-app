@@ -5,8 +5,8 @@ import styles from "./Nosotros.module.css";
 // Placeholder editable: reemplazá nombre, rol y foto real de cada integrante.
 const equipoFotos = [
   {
-    nombre: "Martín José Artigas",
-    rol: "Coordinador / Director General",
+    nombre: "Martín Artigas",
+    rol: "Fundador / Dirección General",
     foto: "/images/img-persona.webp",
   },
  
@@ -31,9 +31,9 @@ export default function Nosotros() {
           {equipoFotos.map((persona) => (
             <div key={persona.nombre} className={styles.fotoCard}>
               <div className={styles.fotoWrap}>
-                <Image
+                 <Image
                   src={persona.foto}
-                  alt={persona.nombre}
+                  alt={`${persona.nombre}, ${persona.rol} de Espacio Robot`}
                   width={220}
                   height={220}
                   className={styles.fotoImg}

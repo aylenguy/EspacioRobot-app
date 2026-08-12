@@ -60,8 +60,22 @@ const preguntas = [
     respuesta:
       "Sí. Adaptamos la propuesta según el ritmo de cada chico y trabajamos en grupos reducidos para poder acompañar de cerca a cada uno.",
   },
- 
 ];
+
+// Datos estructurados para que Google pueda mostrar estas preguntas
+// como "rich result" directamente en los resultados de búsqueda.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: preguntas.map((item) => ({
+    "@type": "Question",
+    name: item.pregunta,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.respuesta,
+    },
+  })),
+};
 
 export default function FAQ() {
   const [abierta, setAbierta] = useState<number | null>(0);
@@ -72,6 +86,10 @@ export default function FAQ() {
 
   return (
     <section id="faq" className={styles.section}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className={styles.content}>
         <h2 className={styles.title}>
           Todo lo que necesitás <span className={styles.accent}>saber</span>

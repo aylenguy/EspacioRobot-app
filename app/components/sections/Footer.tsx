@@ -4,13 +4,14 @@ import styles from "./Footer.module.css";
 const enlaces = [
   { label: "Cursos", href: "#cursos" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "FAQ", href: "#faq" },
+  { label: "Sede", href: "#sedes" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 // Placeholder editable: reemplazá por la ubicación real si cambia.
-const UBICACION = "Rosario, Santa Fe, Argentina";
+const UBICACION = "3 de Febrero 1486, Rosario, Santa Fe";
+const TELEFONO = "+54 9 341 749-9663";
 
 export default function Footer() {
   const anioActual = new Date().getFullYear();
@@ -59,11 +60,14 @@ export default function Footer() {
 
         <div className={styles.divider} />
 
-        <div className={styles.bottom}>
+       <div className={styles.bottom}>
           <p className={styles.copy}>
             © {anioActual} Espacio Robot. Todos los derechos reservados.
           </p>
           <p className={styles.tagline}>Robótica · Impresión 3D · Inteligencia Artificial · Scratch</p>
+          <a href="/politica-de-privacidad" className={styles.copy}>
+            Política de Privacidad
+          </a>
         </div>
       </div>
     </footer>
