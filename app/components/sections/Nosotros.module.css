@@ -159,19 +159,24 @@
 }
 
 .fotoWrap {
+  position: relative; /* requerido por next/image con fill */
   width: 200px;
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--line);
   margin-bottom: 24px;
+
+  /* anillo con los colores de marca en vez de un borde gris plano */
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%) border-box;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .fotoImg {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center 8%; 
 }
 
 .fotoNombre {

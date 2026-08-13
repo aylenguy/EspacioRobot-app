@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: "Espacio Robot - Cursos y talleres de robótica en Rosario",
     template: "%s | Espacio Robot",
   },
-  description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial mediante clases prácticas en Rosario. ¡Inscripciones abiertas!",
+  description: "Formamos a chicos y adolescentes en robótica, programación e inteligencia artificial mediante clases prácticas en Rosario. ¡Inscripciones abiertas!",
   keywords: [
     "robótica",
     "cursos de robótica",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Espacio Robot - Cursos de robótica en Rosario",
-    description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
+    description: "Formamos a chicos y adolescentes en robótica, programación e inteligencia artificial.",
     url: "https://www.espaciorobot.com.ar",
     siteName: "Espacio Robot",
     images: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Espacio Robot - Cursos de robótica en Rosario",
-    description: "Formamos a chicos, adolescentes y adultos en robótica, programación e inteligencia artificial.",
+    description: "Formamos a chicos y adolescentes en robótica, programación e inteligencia artificial.",
     images: ["/images/robot-ubicacion.jpeg"],
   },
 };
@@ -78,7 +78,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: "Espacio Robot",
-  description: "Escuela de robótica, programación e inteligencia artificial para chicos, adolescentes y adultos en Rosario.",
+  description: "Escuela de robótica, programación e inteligencia artificial para chicos y adolescentes en Rosario.",
   url: "https://www.espaciorobot.com.ar",
   logo: "https://www.espaciorobot.com.ar/images/logo-robot.png",
   image: "https://www.espaciorobot.com.ar/images/robot-ubicacion.jpeg",

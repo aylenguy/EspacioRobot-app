@@ -2,12 +2,11 @@
 import Image from "next/image";
 import styles from "./Nosotros.module.css";
 
-// Placeholder editable: reemplazá nombre, rol y foto real de cada integrante.
 const equipoFotos = [
   {
     nombre: "Martín Artigas",
     rol: "Fundador / Dirección General",
-    foto: "/images/img-persona.webp",
+    foto: "/images/martin.png",
   },
  
 ];
@@ -30,15 +29,15 @@ export default function Nosotros() {
         <div className={styles.fotosGrid}>
           {equipoFotos.map((persona) => (
             <div key={persona.nombre} className={styles.fotoCard}>
-              <div className={styles.fotoWrap}>
-                 <Image
-                  src={persona.foto}
-                  alt={`${persona.nombre}, ${persona.rol} de Espacio Robot`}
-                  width={220}
-                  height={220}
-                  className={styles.fotoImg}
-                />
-              </div>
+             <div className={styles.fotoWrap}>
+  <Image
+    src={persona.foto}
+    alt={`${persona.nombre}, ${persona.rol} de Espacio Robot`}
+    fill
+    sizes="200px"
+    className={styles.fotoImg}
+  />
+</div>
               <h3 className={styles.fotoNombre}>{persona.nombre}</h3>
               <p className={styles.fotoRol}>{persona.rol}</p>
             </div>

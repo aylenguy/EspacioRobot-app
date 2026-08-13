@@ -67,7 +67,7 @@ export default function Hero() {
           </h1>
 
           <p className={styles.lead}>
-            Formamos a chicos, adolescentes y adultos en robótica,
+            Formamos a chicos y adolescentes en robótica,
             programación e inteligencia artificial mediante clases
             prácticas, desafíos y proyectos reales.
           </p>
