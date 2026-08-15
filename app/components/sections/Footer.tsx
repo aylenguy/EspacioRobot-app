@@ -6,7 +6,7 @@ const enlaces = [
   { label: "Nosotros", href: "#nosotros" },
    { label: "Espacios", href: "#espacios" },
   { label: "Sede", href: "#sedes" },
-    { label: "FAQ", href: "#faq" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contacto", href: "#contacto" },
 ];
 
