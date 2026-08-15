@@ -64,11 +64,27 @@
    MITAD IZQUIERDA — IMAGEN
 ========================================= */
 
+.imageFrame {
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--blue),
+    var(--purple),
+    var(--orange)
+  );
+  height: 100%;
+  /* SIN clip-path acá: el corte ya lo hace .split sobre todo el contenedor */
+}
+
 .imageHalf {
   position: relative;
   width: 100%;
-  height: 100%; /* clave para que llene */
+  height: 100%;
   min-height: 320px;
+  overflow: hidden;
+  /* SIN clip-path acá tampoco */
 }
 
 .image {

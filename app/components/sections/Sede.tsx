@@ -28,23 +28,26 @@ export default function Sede() {
 
       <div className={styles.split}>
         
-     {/* IZQUIERDA — IMAGEN */}
-        <div className={styles.imageHalf}>
-          <Image
-            src="/images/robot-ubicacion.jpeg"
-            alt="Fachada de Espacio Robot en 3 de Febrero 1486, Rosario"
-            fill
-            className={styles.image}
-            priority
-          />
+    
+       {/* IZQUIERDA — IMAGEN */}
+<div className={styles.imageFrame}>
+  <div className={styles.imageHalf}>
+    <Image
+      src="/images/robot-ubicacion.jpeg"
+      alt="Fachada de Espacio Robot en 3 de Febrero 1486, Rosario"
+      fill
+      className={styles.image}
+      priority
+    />
 
-          <div className={styles.imageOverlay} />
+    <div className={styles.imageOverlay} />
 
-          <div className={styles.imageCaption}>
-            <span className={styles.imageLabel}>NUESTRA SEDE</span>
-            <h2 className={styles.imageTitle}>Espacio Robot</h2>
-          </div>
-        </div>
+    <div className={styles.imageCaption}>
+      <span className={styles.imageLabel}>NUESTRA SEDE</span>
+      <h2 className={styles.imageTitle}>Espacio Robot</h2>
+    </div>
+  </div>
+</div>
 
         {/* DERECHA — MAPA */}
         <div className={styles.mapHalf}>

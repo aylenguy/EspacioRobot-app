@@ -62,7 +62,7 @@ export default function Hero() {
 </a>
 
           <h1 className={styles.headline}>
-            Aprendé a crear
+            Creando
             <span className={styles.accent}> el futuro.</span>
           </h1>
 
@@ -111,11 +111,11 @@ export default function Hero() {
           </div>
 
           <div className={`${styles.floatingCard} ${styles.cardTop}`}>
-            <span className={styles.cardNumber}>01</span>
+            
 
             <div>
               <span className={styles.cardLabel}>APRENDER</span>
-              <strong>Haciendo</strong>
+              <strong>Jugando</strong>
             </div>
           </div>
 
@@ -134,7 +134,7 @@ export default function Hero() {
           </div>
 
           <div className={styles.sideLabel}>
-            <span>01</span>
+     
             EXPERIENCIA
           </div>
         </div>

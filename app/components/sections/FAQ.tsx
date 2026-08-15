@@ -10,11 +10,11 @@ const preguntas = [
     respuesta:
       "El inicio de clases es el 18 de agosto de 2026. La inscripción está abierta todo el año, así que podés sumarte en cualquier momento.",
   },
-  {
-    pregunta: "¿Necesito tener conocimientos previos?",
-    respuesta:
-      "No, no hace falta ninguna experiencia previa. Empezamos desde cero y cada nivel está pensado para ir construyendo sobre lo aprendido.",
-  },
+{
+  pregunta: "¿Es necesario tener conocimientos previos?",
+  respuesta:
+    "No, no hace falta ninguna experiencia previa. Empezamos desde cero y cada nivel está pensado para ir construyendo sobre lo aprendido. La única excepción es Robótica Educativa Avanzada, que sí requiere conocimientos previos.",
+},
   {
     pregunta: "¿A partir de qué edad se pueden inscribir?",
     respuesta:

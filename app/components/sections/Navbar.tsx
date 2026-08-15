@@ -8,8 +8,9 @@ const enlaces = [
   { label: "Cursos", href: "#cursos" },
   { label: "Nosotros", href: "#nosotros" },
   //{ label: "Testimonios", href: "#testimonios" },
-   { label: "FAQ", href: "#faq" },
+  { label: "Espacios", href: "#espacios" },
   { label: "Sede", href: "#sedes" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contacto", href: "#contacto" },
 ];
 

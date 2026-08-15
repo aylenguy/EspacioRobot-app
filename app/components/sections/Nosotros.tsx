@@ -19,11 +19,9 @@ export default function Nosotros() {
     <h2 className={styles.title}>
   Quiénes <span className={styles.accent}>somos</span>
 </h2>
-        <p className={styles.lead}>
-          Espacio Robot nació para acercar la robótica, la programación y la
-          inteligencia artificial a todas las edades, con una mirada práctica
-          y cercana.
-        </p>
+     <p className={styles.lead}>
+  En Espacio Robot los niños/as juegan, arman, programan y se equivocan sin apuro, aprendiendo sin darse cuenta lo que van a usar toda la vida. Un espacio propio, con equipo docente capacitado, para animarse a crear con la tecnología en vez de solo consumirla.
+</p>
 
         {/* Equipo con foto */}
         <div className={styles.fotosGrid}>

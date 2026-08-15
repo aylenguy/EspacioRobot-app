@@ -526,10 +526,9 @@ export default function Cursos() {
         <h2 className={styles.title}>
           Cursos y talleres <span className={styles.accent}>disponibles</span>
         </h2>
-        <p className={styles.subtitle}>
-          Elegí el programa que mejor se adapte y descubrí de qué se trata
-          cada clase.
-        </p>
+      <p className={styles.subtitle}>
+  <strong>Elegí la mejor opción para tu peque!</strong> Completá la inscripción y te contactaremos para coordinar la clase de prueba. <strong>Abonás recién en la segunda clase.</strong> Consultá por nuestras promos!
+</p>
       </div>
 
       <div className={styles.grid}>
