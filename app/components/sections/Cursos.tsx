@@ -18,6 +18,7 @@ type CardDestacada = {
   edad: string;
   inscripcion: string;
   cuota: string;
+  horarios: string[];
   colorFrom?: string; // color inicial del gradiente del header
   colorTo?: string;   // color final del gradiente del header
   // Ancho de la imagen en px. Por defecto 190. Bajalo para fotos que
@@ -88,67 +89,76 @@ const cursos: Curso[] = [
       edad: "4 a 6 años",
       inscripcion: "$ 30.000",
       cuota: "$ 70.000",
+      horarios: ["Martes 16:30-18:00hs"],
     },
   },
   {
-  id: "robotica-inicial",
-  numero: "02",
-  titulo: "Robótica Educativa Inicial",
-  resumen: "Primeros pasos en robótica con juegos y construcciones.",
-  duracion: "Clases de 1 h 30 min",
-  formValor: "Robótica Educativa Inicial",
-  contenido: [
-    "Introducción a engranajes, sensores y poleas",
-    "Mecanismos simples y su funcionamiento",
-    "Programación de robots propios",
-    "Desafíos progresivos según el ritmo del alumno",
-    "Desarrollo de pensamiento lógico y trabajo en equipo",
-  ],
-  card: {
-    imagen: "/images/curso--6.png", // ⚠️ ajustar al nombre real del archivo
-    descripcion:
-      "Un espacio práctico y dinámico para adentrarse en la tecnología. Mediante juegos y construcciones, los chicos aprenden sobre engranajes, sensores, poleas y mecanismos simples, programando sus propios robots para darles vida. La propuesta desarrolla el pensamiento lógico y el trabajo en equipo con desafíos que avanzan gradualmente al ritmo de cada alumno.",
-    callouts: [
-      { texto: "Ideal para dar los primeros pasos en robótica.", variante: "blue" },
+    id: "robotica-inicial",
+    numero: "02",
+    titulo: "Robótica Educativa Inicial",
+    resumen: "Primeros pasos en robótica con juegos y construcciones.",
+    duracion: "Clases de 1 h 30 min",
+    formValor: "Robótica Educativa Inicial",
+    contenido: [
+      "Introducción a engranajes, sensores y poleas",
+      "Mecanismos simples y su funcionamiento",
+      "Programación de robots propios",
+      "Desafíos progresivos según el ritmo del alumno",
+      "Desarrollo de pensamiento lógico y trabajo en equipo",
     ],
-    edad: "6 a 12 años",
-    inscripcion: "$ 30.000",
-    cuota: "$ 70.000",
-    colorFrom: "#2f5fdb",
-    colorTo: "#4d7fff",
-    imagenAncho: 150,
+    card: {
+      imagen: "/images/curso--6.png", // ⚠️ ajustar al nombre real del archivo
+      descripcion:
+        "Un espacio práctico y dinámico para adentrarse en la tecnología. Mediante juegos y construcciones, los chicos aprenden sobre engranajes, sensores, poleas y mecanismos simples, programando sus propios robots para darles vida. La propuesta desarrolla el pensamiento lógico y el trabajo en equipo con desafíos que avanzan gradualmente al ritmo de cada alumno.",
+      callouts: [
+        { texto: "Ideal para dar los primeros pasos en robótica.", variante: "blue" },
+      ],
+      edad: "6 a 12 años",
+      inscripcion: "$ 30.000",
+      cuota: "$ 70.000",
+      colorFrom: "#2f5fdb",
+      colorTo: "#4d7fff",
+      imagenAncho: 150,
+      horarios: [
+        "Lunes 14:30-16:00hs",
+        "Miércoles 09:30-11:00hs",
+        "Miércoles 16:30-18:00hs",
+        "Sábados 09:30-11:00hs",
+        "Sábados 11:30-13:00hs",
+      ],
+    },
   },
-},
-{
-  id: "robotica-avanzada",
-  numero: "03",
-  titulo: "Robótica Educativa Avanzada",
-  resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
-  duracion: "Clases de 1 h 30 min",
-  formValor: "Robótica Educativa Avanzada",
-  contenido: [
-    "Diseño y armado de máquinas complejas",
-    "Programación de rutinas avanzadas",
-    "Interacción entre dispositivos",
-    "Proyectos colaborativos",
-    "Resolución de problemas reales",
-  ],
-  card: {
-    imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
-    descripcion:
-      "Diseñado para quienes completaron el nivel inicial y buscan nuevos retos tecnológicos. En este taller se potencian el pensamiento analítico, la concentración y la creatividad resolviendo problemas reales. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos.",
-    callouts: [
-  { texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel.", variante: "purple" },
-  { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
-],
-    edad: "9 a 13 años",
-    inscripcion: "$ 30.000",
-    cuota: "$ 70.000",
-    colorFrom: "#7c3aed",
-    colorTo: "#a78bfa",
+  {
+    id: "robotica-avanzada",
+    numero: "03",
+    titulo: "Robótica Educativa Avanzada",
+    resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
+    duracion: "Clases de 1 h 30 min",
+    formValor: "Robótica Educativa Avanzada",
+    contenido: [
+      "Diseño y armado de máquinas complejas",
+      "Programación de rutinas avanzadas",
+      "Interacción entre dispositivos",
+      "Proyectos colaborativos",
+      "Resolución de problemas reales",
+    ],
+    card: {
+      imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
+      descripcion:
+        "Diseñado para quienes completaron el nivel inicial y buscan nuevos retos tecnológicos. En este taller se potencian el pensamiento analítico, la concentración y la creatividad resolviendo problemas reales. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos.",
+      callouts: [
+        { texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel.", variante: "purple" },
+        { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
+      ],
+      edad: "9 a 13 años",
+      inscripcion: "$ 30.000",
+      cuota: "$ 70.000",
+      colorFrom: "#7c3aed",
+      colorTo: "#a78bfa",
+      horarios: ["Miércoles 14:30-16:00hs"],
+    },
   },
-},
- {
+  {
     id: "programacion-scratch",
     numero: "04",
     titulo: "Programación con Scratch",
@@ -174,9 +184,9 @@ const cursos: Curso[] = [
       cuota: "$ 70.000",
       colorFrom: "#0f8b93",
       colorTo: "#1cc7c9",
+      horarios: ["Lunes 16:30-18:00hs", "Martes 16:30-18:00hs"],
     },
   },
-  
   {
     id: "impresion-3d-ninos",
     numero: "05",
@@ -192,7 +202,7 @@ const cursos: Curso[] = [
       "Resolución de problemas paso a paso",
     ],
     card: {
-      imagen: "/images/curso---2.png", 
+      imagen: "/images/curso---2.png",
       descripcion:
         "Un espacio técnico y creativo donde los chicos aprenden a transformar sus ideas en objetos reales. A través de herramientas de modelado tridimensional, exploran los principios del diseño y la fabricación digital, desarrollando la noción espacial y la resolución de problemas paso a paso.",
       callouts: [
@@ -204,6 +214,7 @@ const cursos: Curso[] = [
       colorFrom: "#f2790c",
       colorTo: "#ff9f42",
       imagenAncho: 150,
+      horarios: ["Miércoles 14:30-16:00hs", "Miércoles 16:30-18:00hs"],
     },
   },
   {
@@ -233,10 +244,9 @@ const cursos: Curso[] = [
       colorFrom: "#3fae63",
       colorTo: "#63c98a",
       imagenAncho: 150,
+      horarios: ["Lunes 16:30-18:00hs", "Viernes 16:30-18:00hs"],
     },
   },
- 
-
 ];
 
 function CardSimple({
@@ -264,7 +274,7 @@ function CardSimple({
 }
 
 // Preview liviano: solo header + imagen + botón "Conocer más".
-// El detalle completo (descripción, callouts, datos) vive en el modal.
+// El detalle completo (descripción, callouts, datos, horarios) vive en el modal.
 function CardDestacadaPreview({
   curso,
   onOpen,
@@ -292,9 +302,9 @@ function CardDestacadaPreview({
       </div>
 
       <div className={styles.cardFullImageWrap}>
-      <Image
-  src={card.imagen}
-  alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
+        <Image
+          src={card.imagen}
+          alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
           width={220}
           height={220}
           className={styles.cardFullImage}
@@ -313,7 +323,7 @@ function CardDestacadaPreview({
 }
 
 // Modal con el detalle completo de la card destacada
-// (header con color propio, imagen, descripción, callouts, datos y CTA).
+// (header con color propio, imagen, descripción, callouts, datos, horarios y CTA).
 function ModalDestacado({
   curso,
   onClose,
@@ -346,6 +356,7 @@ function ModalDestacado({
     >
       <div
         className={styles.modalDestacado}
+        style={headerColorStyle(card)}
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -357,10 +368,7 @@ function ModalDestacado({
           ✕
         </button>
 
-        <div
-          className={styles.cardFullHeader}
-          style={headerColorStyle(card)}
-        >
+        <div className={styles.cardFullHeader}>
           <h3
             id="curso-destacado-modal-title"
             className={styles.cardFullTitle}
@@ -373,9 +381,9 @@ function ModalDestacado({
         </div>
 
         <div className={styles.cardFullImageWrap}>
-        <Image
-  src={card.imagen}
-  alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
+          <Image
+            src={card.imagen}
+            alt={`Curso de ${curso.titulo} en Espacio Robot, para chicos de ${card.edad}`}
             width={220}
             height={220}
             className={styles.cardFullImage}
@@ -386,26 +394,26 @@ function ModalDestacado({
         <p className={styles.cardFullDescripcion}>{card.descripcion}</p>
 
         <div className={styles.cardFullCallouts}>
-       {card.callouts.map((c) => (
-  <p
-    key={c.texto}
-    className={
-      c.variante === "pink"
-        ? styles.calloutPink
-        : c.variante === "green"
-        ? styles.calloutGreen
-        : c.variante === "teal"
-        ? styles.calloutTeal
-        : c.variante === "purple"
-        ? styles.calloutPurple
-        : c.variante === "blue"
-        ? styles.calloutBlue
-        : styles.calloutOrange
-    }
-  >
-    {c.texto}
-  </p>
-))}
+          {card.callouts.map((c) => (
+            <p
+              key={c.texto}
+              className={
+                c.variante === "pink"
+                  ? styles.calloutPink
+                  : c.variante === "green"
+                  ? styles.calloutGreen
+                  : c.variante === "teal"
+                  ? styles.calloutTeal
+                  : c.variante === "purple"
+                  ? styles.calloutPurple
+                  : c.variante === "blue"
+                  ? styles.calloutBlue
+                  : styles.calloutOrange
+              }
+            >
+              {c.texto}
+            </p>
+          ))}
         </div>
 
         <div className={styles.cardFullStats}>
@@ -422,6 +430,19 @@ function ModalDestacado({
             <span className={styles.statValue}>{card.cuota}</span>
           </div>
         </div>
+
+        {card.horarios.length > 0 && (
+          <div className={styles.cardFullHorarios}>
+            <p className={styles.horariosLabel}>HORARIOS DISPONIBLES</p>
+            <div className={styles.horariosList}>
+              {card.horarios.map((h) => (
+                <span key={h} className={styles.horarioBadge}>
+                  {h}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className={styles.modalDestacadoCtaWrap}>
           <a
@@ -526,9 +547,9 @@ export default function Cursos() {
         <h2 className={styles.title}>
           Cursos y talleres <span className={styles.accent}>disponibles</span>
         </h2>
-      <p className={styles.subtitle}>
-  <strong>Elegí la mejor opción para tu peque!</strong> Completá la inscripción y te contactaremos para coordinar la clase de prueba. <strong>Abonás recién en la segunda clase.</strong> Consultá por nuestras promos!
-</p>
+        <p className={styles.subtitle}>
+          <strong>Elegí la mejor opción para tu peque!</strong> Completá la inscripción y te contactaremos para coordinar la clase de prueba. <strong>Abonás recién en la segunda clase.</strong> Consultá por nuestras promos!
+        </p>
       </div>
 
       <div className={styles.grid}>

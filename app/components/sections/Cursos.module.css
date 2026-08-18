@@ -555,6 +555,42 @@
 }
 
 /* =========================================
+   CARD DESTACADA — HORARIOS DISPONIBLES
+   (vive dentro del modal, debajo de las stats)
+========================================= */
+
+.cardFullHorarios {
+  margin: 22px 28px 0;
+}
+
+.horariosLabel {
+  margin: 0 0 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  color: #8b8f99;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.horariosList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.horarioBadge {
+  padding: 7px 14px;
+  color: var(--card-color-from, #ec3c7a);
+  background: color-mix(in srgb, var(--card-color-from, #ec3c7a) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--card-color-from, #ec3c7a) 30%, white);
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* =========================================
    MODAL DESTACADO
    (se abre al apretar "Conocer más")
 ========================================= */
