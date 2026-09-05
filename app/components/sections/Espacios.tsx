@@ -5,24 +5,28 @@ import styles from "./Espacios.module.css";
 
 const fotos = [
   {
-    src: "/images/espacio-1.jpg",
+    src: "/images/espacio-1.webp",
     alt: "Salón principal de Espacio Robot",
     label: "SALÓN PRINCIPAL",
+    position: "center 70%", // antes 20%, bajamos para centrar mejor
   },
   {
-    src: "/images/espacio-2.jpg",
+    src: "/images/espacio-2.webp",
     alt: "Robots y proyectos de los alumnos",
     label: "NUESTROS ROBOTS",
+    position: "center", // está bien, no tocar
   },
   {
-    src: "/images/espacio-3.jpg",
+    src: "/images/espacio-3.webp",
     alt: "Zona de trabajo e impresión 3D",
     label: "ZONA DE TRABAJO",
+    position: "center 60%", 
   },
   {
-    src: "/images/espacio-4.jpg",
+    src: "/images/espacio-4.webp",
     alt: "Espacio de programación",
     label: "PROGRAMACIÓN",
+    position: "center 30%", // está bien, no tocar
   },
 ];
 
@@ -47,6 +51,7 @@ export default function Espacios() {
                 alt={foto.alt}
                 fill
                 className={styles.image}
+                style={{ objectPosition: foto.position }}
                 sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
               />
               <div className={styles.overlay} />
