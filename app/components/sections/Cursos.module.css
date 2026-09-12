@@ -52,9 +52,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  max-width: 1200px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -346,6 +346,25 @@
   outline: none;
 }
 
+/* Cinta "NUEVO" en la esquina superior derecha de la card */
+.ribbon {
+  position: absolute;
+  top: 14px;
+  right: -34px;
+  z-index: 3;
+  width: 130px;
+  padding: 5px 0;
+  background: linear-gradient(100deg, #ec3c7a, #7c3aed);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
 .cardFullHeader {
   position: relative;
   display: flex;
@@ -419,9 +438,9 @@
   gap: 8px;
   margin-top: auto;
   padding: 12px 22px;
-  color: #ec3c7a;
-  background: rgba(236, 60, 122, 0.08);
-  border: 1px solid rgba(236, 60, 122, 0.25);
+  color: var(--card-color-from, #ec3c7a);
+  background: color-mix(in srgb, var(--card-color-from, #ec3c7a) 8%, white);
+  border: 1px solid color-mix(in srgb, var(--card-color-from, #ec3c7a) 25%, white);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
@@ -434,8 +453,8 @@
 
 .cardFull:hover .cardFullMore,
 .cardFull:focus-visible .cardFullMore {
-  background: rgba(236, 60, 122, 0.14);
-  border-color: rgba(236, 60, 122, 0.45);
+  background: color-mix(in srgb, var(--card-color-from, #ec3c7a) 14%, white);
+  border-color: color-mix(in srgb, var(--card-color-from, #ec3c7a) 45%, white);
 }
 
 .cardFull:hover .cardFullMoreArrow,

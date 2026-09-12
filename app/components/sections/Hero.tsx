@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import styles from "./Hero.module.css";
+import TallerIntegralBanner from "./TallerIntegralBanner";
 
 const FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSd3wo934EoASt0vrmia4p1--YdZpghrr0MMXwql--k-DQuZMw/viewform?entry.123456789=Rob%C3%B3tica+para+Ni%C3%B1os";
@@ -139,6 +140,9 @@ export default function Hero() {
           </div>
         </div>
       </main>
+
+      {/* Banner destacado del Taller Integral, dentro del mismo Hero */}
+      <TallerIntegralBanner />
     </>
   );
 }

@@ -24,6 +24,8 @@ type CardDestacada = {
   // Ancho de la imagen en px. Por defecto 190. Bajalo para fotos que
   // vienen más "cargadas"/grandes que los renders y se ven desproporcionadas.
   imagenAncho?: number;
+  // Si está en true, muestra la cinta "NUEVO" en la esquina de la card.
+  esNuevo?: boolean;
 };
 
 type Curso = {
@@ -64,6 +66,46 @@ function headerColorStyle(card: CardDestacada): CSSProperties | undefined {
 }
 
 const cursos: Curso[] = [
+   {
+    id: "taller-integral",
+    numero: "02",
+    titulo: "Taller Integral Tecnológico",
+    resumen: "Robótica, programación, IA e impresión 3D en un mismo taller.",
+    duracion: "Clases de 1 h 30 min",
+    formValor: "Taller Integral Tecnológico",
+    contenido: [
+      "Robótica educativa inicial: engranajes, sensores y mecanismos",
+      "Programación con Scratch: lógica, secuencias y videojuegos",
+      "Inteligencia Artificial: herramientas de IA generativa aplicadas a proyectos",
+      "Diseño e impresión 3D: modelado y fabricación digital",
+      "Un recorrido flexible: no hace falta elegir un área, prueban todas",
+    ],
+    card: {
+      imagen: "/images/curso-integral.png", // ⚠️ falta la imagen real, ajustar nombre de archivo
+      descripcion:
+        "Un mismo taller, muchos caminos posibles. Este taller combina conceptos de robótica, programación y las herramientas más útiles de Inteligencia Artificial. Las clases son dinámicas, flexibles y adaptables a los cambios tecnológicos que se van sucediendo con el tiempo. Los chicos recorren todas las áreas y se llevan una base completa de tecnología. También fomentamos la creatividad y el trabajo en equipo, resolviendo problemas y desafíos.",
+      callouts: [
+        {
+          texto: "Único en Rosario: no hace falta decidir en qué taller anotarse, le damos una base completa.",
+          variante: "blue",
+        },
+      ],
+      edad: "7 a 12 años",
+      inscripcion: "$ 30.000",
+      cuota: "$ 70.000",
+      colorFrom: "#2f5fdb",
+      colorTo: "#f2790c",
+      imagenAncho: 260,
+      esNuevo: true,
+      horarios: [
+        "Lunes 16:30-18:00hs",
+        "Martes 16:30-18:00hs",
+        "Miércoles 16:30-18:00hs",
+        "Jueves 16:30-18:00hs",
+        "Viernes 16:30-18:00hs",
+      ],
+    },
+  },
   {
     id: "robotica-ninos",
     numero: "01",
@@ -89,107 +131,13 @@ const cursos: Curso[] = [
       edad: "4 a 6 años",
       inscripcion: "$ 30.000",
       cuota: "$ 70.000",
-      horarios: ["Martes 16:30-18:00hs"],
+      horarios: ["Martes 16:30-18:00hs", "Jueves 16:30-18:00hs"],
     },
   },
-  {
-    id: "robotica-inicial",
-    numero: "02",
-    titulo: "Robótica Educativa Inicial",
-    resumen: "Primeros pasos en robótica con juegos y construcciones.",
-    duracion: "Clases de 1 h 30 min",
-    formValor: "Robótica Educativa Inicial",
-    contenido: [
-      "Introducción a engranajes, sensores y poleas",
-      "Mecanismos simples y su funcionamiento",
-      "Programación de robots propios",
-      "Desafíos progresivos según el ritmo del alumno",
-      "Desarrollo de pensamiento lógico y trabajo en equipo",
-    ],
-    card: {
-      imagen: "/images/curso--6.png", // ⚠️ ajustar al nombre real del archivo
-      descripcion:
-        "Un espacio práctico y dinámico para adentrarse en la tecnología. Mediante juegos y construcciones, los chicos aprenden sobre engranajes, sensores, poleas y mecanismos simples, programando sus propios robots para darles vida. La propuesta desarrolla el pensamiento lógico y el trabajo en equipo con desafíos que avanzan gradualmente al ritmo de cada alumno.",
-      callouts: [
-        { texto: "Ideal para dar los primeros pasos en robótica.", variante: "blue" },
-      ],
-      edad: "6 a 12 años",
-      inscripcion: "$ 30.000",
-      cuota: "$ 70.000",
-      colorFrom: "#2f5fdb",
-      colorTo: "#4d7fff",
-      imagenAncho: 150,
-      horarios: [
-        "Lunes 14:30-16:00hs",
-        "Miércoles 09:30-11:00hs",
-        "Miércoles 16:30-18:00hs",
-        "Sábados 09:30-11:00hs",
-        "Sábados 11:30-13:00hs",
-      ],
-    },
-  },
-  {
-    id: "robotica-avanzada",
-    numero: "03",
-    titulo: "Robótica Educativa Avanzada",
-    resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
-    duracion: "Clases de 1 h 30 min",
-    formValor: "Robótica Educativa Avanzada",
-    contenido: [
-      "Diseño y armado de máquinas complejas",
-      "Programación de rutinas avanzadas",
-      "Interacción entre dispositivos",
-      "Proyectos colaborativos",
-      "Resolución de problemas reales",
-    ],
-    card: {
-      imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
-      descripcion:
-        "Diseñado para quienes completaron el nivel inicial y buscan nuevos retos tecnológicos. En este taller se potencian el pensamiento analítico, la concentración y la creatividad resolviendo problemas reales. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos.",
-      callouts: [
-        { texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel.", variante: "purple" },
-        { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
-      ],
-      edad: "9 a 13 años",
-      inscripcion: "$ 30.000",
-      cuota: "$ 70.000",
-      colorFrom: "#7c3aed",
-      colorTo: "#a78bfa",
-      horarios: ["Miércoles 14:30-16:00hs"],
-    },
-  },
-  {
-    id: "programacion-scratch",
-    numero: "04",
-    titulo: "Programación con Scratch",
-    resumen: "Lógica de programación creando juegos e historias.",
-    duracion: "Clases de 1 h 30 min",
-    formValor: "Programación con Scratch",
-    contenido: [
-      "Lógica de programación por bloques",
-      "Secuencias, bucles y condicionales",
-      "Creación de historias interactivas",
-      "Diseño de videojuegos simples",
-      "Proyecto final personalizado para mostrar en clase",
-    ],
-    card: {
-      imagen: "/images/curso--4.png", // ⚠️ ajustar si el nombre real es distinto
-      descripcion:
-        "Un taller 100% creativo para aprender a programar interactuando con bloques visuales. Los participantes desarrollan la lógica, la secuencia de comandos y la resolución de problemas mientras crean animaciones y videojuegos propios. El recorrido es progresivo, enfocado en ganar confianza e impulsar la imaginación para construir proyectos desde cero.",
-      callouts: [
-        { texto: "La puerta de entrada ideal al universo del software.", variante: "teal" },
-      ],
-      edad: "8 a 12 años",
-      inscripcion: "$ 30.000",
-      cuota: "$ 70.000",
-      colorFrom: "#0f8b93",
-      colorTo: "#1cc7c9",
-      horarios: ["Lunes 16:30-18:00hs", "Martes 16:30-18:00hs"],
-    },
-  },
+ 
   {
     id: "impresion-3d-ninos",
-    numero: "05",
+    numero: "03",
     titulo: "Impresión 3D para Niños",
     resumen: "Diseño y modelado 3D para dar vida a tus ideas.",
     duracion: "Clases de 1 h 30 min",
@@ -208,43 +156,46 @@ const cursos: Curso[] = [
       callouts: [
         { texto: "Ideal para materializar la imaginación.", variante: "orange" },
       ],
-      edad: "10 a 13 años",
+      edad: "7 a 13 años",
       inscripcion: "$ 30.000",
       cuota: "$ 80.000 (insumos incl.)",
       colorFrom: "#f2790c",
       colorTo: "#ff9f42",
       imagenAncho: 150,
-      horarios: ["Miércoles 14:30-16:00hs", "Miércoles 16:30-18:00hs"],
+      horarios: ["Miércoles 16:30-18:00hs"],
     },
   },
   {
-    id: "inteligencia-artificial",
-    numero: "06",
-    titulo: "Inteligencia Artificial para Niños",
-    resumen: "Herramientas de IA aplicadas a proyectos reales.",
+    id: "robotica-avanzada",
+    numero: "04",
+    titulo: "Robótica Educativa Avanzada",
+    resumen: "Retos tecnológicos para llevar la robótica al siguiente nivel.",
     duracion: "Clases de 1 h 30 min",
-    formValor: "Inteligencia Artificial para Niños",
+    formValor: "Robótica Educativa Avanzada",
     contenido: [
-      "Introducción a conceptos de inteligencia artificial",
-      "Uso de herramientas de IA generativa",
-      "Creación y ajuste de prompts",
-      "Nociones básicas de machine learning",
-      "Proyecto práctico aplicando IA a un caso real",
+      "Diseño y armado de máquinas complejas",
+      "Programación de rutinas avanzadas",
+      "Interacción entre dispositivos",
+      "Proyectos colaborativos",
+      "Resolución de problemas reales",
     ],
     card: {
-      imagen: "/images/curso--3.png", // ⚠️ ajustar si el nombre real es distinto
+      imagen: "/images/curso--5.png", // ⚠️ ajustar al nombre real del archivo
       descripcion:
-        "Un taller 100% interactivo y creativo donde los chicos aprenden a transformar sus ideas usando la tecnología más moderna. Mediante la experimentación guiada y el juego, los participantes descubren el universo de la IA creando sus propios cuentos, ilustraciones, canciones y proyectos digitales. La propuesta estimula la imaginación, el pensamiento crítico y el uso responsable de las herramientas digitales.",
+        "Diseñado para quienes ya tienen base en robótica y buscan nuevos retos tecnológicos. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos, con la mira puesta en participar de competencias de robótica.",
       callouts: [
-        { texto: "Ideal para explorar el arte y la narrativa del futuro.", variante: "green" },
+        {
+          texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel — incluye chicos de nivel secundario.",
+          variante: "purple",
+        },
+        { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
       ],
-      edad: "7 a 12 años",
+      edad: "9 años en adelante",
       inscripcion: "$ 30.000",
       cuota: "$ 70.000",
-      colorFrom: "#3fae63",
-      colorTo: "#63c98a",
-      imagenAncho: 150,
-      horarios: ["Lunes 16:30-18:00hs", "Viernes 16:30-18:00hs"],
+      colorFrom: "#7c3aed",
+      colorTo: "#a78bfa",
+      horarios: ["Consultar horarios"],
     },
   },
 ];
@@ -290,11 +241,15 @@ function CardDestacadaPreview({
       className={styles.cardFull}
       onClick={onOpen}
       aria-haspopup="dialog"
+      style={headerColorStyle(card)}
     >
-      <div
-        className={styles.cardFullHeader}
-        style={headerColorStyle(card)}
-      >
+      {card.esNuevo && (
+        <span className={styles.ribbon} aria-hidden="true">
+          NUEVO
+        </span>
+      )}
+
+      <div className={styles.cardFullHeader}>
         <h3 className={styles.cardFullTitle}>{curso.titulo}</h3>
         <span className={styles.cardFullSparkle} aria-hidden="true">
           ✦
