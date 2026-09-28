@@ -19,6 +19,8 @@ type CardDestacada = {
   inscripcion: string;
   cuota: string;
   horarios: string[];
+  // Aclaración opcional que se muestra junto al título de horarios (ej: "1 día por semana")
+  horariosNota?: string;
   colorFrom?: string; // color inicial del gradiente del header
   colorTo?: string;   // color final del gradiente del header
   // Ancho de la imagen en px. Por defecto 190. Bajalo para fotos que
@@ -65,8 +67,39 @@ function headerColorStyle(card: CardDestacada): CSSProperties | undefined {
   } as CSSProperties;
 }
 
+// Info general válida para todos los cursos (según PDF "Cursos y Talleres 2026")
+const infoChips: string[] = [
+  "Clases presenciales de 90 minutos*",
+  "Inscripción abierta todo el año",
+  "Kits, PCs y herramientas incluidos",
+  "No se requieren conocimientos previos**",
+];
+
+const promos: { titulo: string; texto: string }[] = [
+  {
+    titulo: "Clase de prueba gratuita",
+    texto:
+      "Los chicos pueden venir a conocer el espacio y experimentar con nuestros kits. La inscripción y el proporcional de la cuota se abonan recién en la segunda clase.",
+  },
+  {
+    titulo: "Beneficio hermanos o amigos",
+    texto:
+      "Inscribiéndose juntos obtienen un 10% de rebaja en la cuota mensual y un 50% en la inscripción individual.",
+  },
+  {
+    titulo: "Recuperación de clases",
+    texto:
+      "Las faltas justificadas y avisadas con anticipación se pueden recuperar en otras comisiones sujetas a disponibilidad de cupo.",
+  },
+  {
+    titulo: "Días feriados",
+    texto:
+      "Las clases que coincidan con feriados nacionales o provinciales no son recuperables.",
+  },
+];
+
 const cursos: Curso[] = [
-   {
+  {
     id: "taller-integral",
     numero: "02",
     titulo: "Taller Integral Tecnológico",
@@ -86,7 +119,8 @@ const cursos: Curso[] = [
         "Un mismo taller, muchos caminos posibles. Este taller combina conceptos de robótica, programación y las herramientas más útiles de Inteligencia Artificial. Las clases son dinámicas, flexibles y adaptables a los cambios tecnológicos que se van sucediendo con el tiempo. Los chicos recorren todas las áreas y se llevan una base completa de tecnología. También fomentamos la creatividad y el trabajo en equipo, resolviendo problemas y desafíos.",
       callouts: [
         {
-          texto: "Único en Rosario: no hace falta decidir en qué taller anotarse, le damos una base completa.",
+          texto:
+            "Único en Rosario: no es necesario decidir en qué taller anotarlo, le vamos a dar una base completa.",
           variante: "blue",
         },
       ],
@@ -97,6 +131,7 @@ const cursos: Curso[] = [
       colorTo: "#f2790c",
       imagenAncho: 260,
       esNuevo: true,
+      horariosNota: "1 día por semana",
       horarios: [
         "Lunes 16:30-18:00hs",
         "Martes 16:30-18:00hs",
@@ -111,7 +146,7 @@ const cursos: Curso[] = [
     numero: "01",
     titulo: "Alfabetización en Robótica y Programación",
     resumen: "Primeros pasos armando y programando robots.",
-    duracion: "Clases de 1 h 30 min",
+    duracion: "Clases de 1 hora",
     formValor: "Robótica para Niños",
     contenido: [
       "Introducción a la robótica con kits didácticos",
@@ -130,11 +165,10 @@ const cursos: Curso[] = [
       ],
       edad: "4 a 6 años",
       inscripcion: "$ 30.000",
-      cuota: "$ 70.000",
-      horarios: ["Martes 16:30-18:00hs", "Jueves 16:30-18:00hs"],
+      cuota: "$ 65.000",
+      horarios: ["Martes 15:00-16:00hs", "Miércoles 15:00-16:00hs"],
     },
   },
- 
   {
     id: "impresion-3d-ninos",
     numero: "03",
@@ -185,10 +219,14 @@ const cursos: Curso[] = [
         "Diseñado para quienes ya tienen base en robótica y buscan nuevos retos tecnológicos. Los alumnos diseñan máquinas complejas, programan rutinas avanzadas y exploran la interacción entre dispositivos a través de proyectos colaborativos, con la mira puesta en participar de competencias de robótica.",
       callouts: [
         {
-          texto: "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel — incluye chicos de nivel secundario.",
+          texto:
+            "Ideal para profundizar conocimientos y llevar la creatividad al siguiente nivel — incluye chicos de nivel secundario.",
           variante: "purple",
         },
-        { texto: "Requiere conocimientos previos de robótica (nivel inicial completado).", variante: "purple" },
+        {
+          texto: "Requiere conocimientos previos de robótica (nivel inicial completado).",
+          variante: "orange",
+        },
       ],
       edad: "9 años en adelante",
       inscripcion: "$ 30.000",
@@ -388,7 +426,10 @@ function ModalDestacado({
 
         {card.horarios.length > 0 && (
           <div className={styles.cardFullHorarios}>
-            <p className={styles.horariosLabel}>HORARIOS DISPONIBLES</p>
+            <p className={styles.horariosLabel}>
+              HORARIOS DISPONIBLES
+              {card.horariosNota ? ` (${card.horariosNota})` : ""}
+            </p>
             <div className={styles.horariosList}>
               {card.horarios.map((h) => (
                 <span key={h} className={styles.horarioBadge}>
@@ -503,7 +544,13 @@ export default function Cursos() {
           Cursos y talleres <span className={styles.accent}>disponibles</span>
         </h2>
         <p className={styles.subtitle}>
-          <strong>Elegí la mejor opción para tu peque!</strong> Completá la inscripción y te contactaremos para coordinar la clase de prueba. <strong>Abonás recién en la segunda clase.</strong> Consultá por nuestras promos!
+          <strong>Elegí la mejor opción para tu peque!</strong> Completá la
+          inscripción y te contactaremos para coordinar la clase de prueba.{" "}
+          <strong>
+            La inscripción y el proporcional de la cuota se abonan recién en la
+            segunda clase.
+          </strong>{" "}
+          Consultá por nuestras promos!
         </p>
       </div>
 
@@ -523,6 +570,33 @@ export default function Cursos() {
             />
           )
         )}
+      </div>
+
+      <div className={styles.infoGeneral}>
+        <ul className={styles.infoChips}>
+          {infoChips.map((chip) => (
+            <li key={chip} className={styles.infoChip}>
+              {chip}
+            </li>
+          ))}
+        </ul>
+
+        <h3 className={styles.promosTitle}>Promociones e información importante</h3>
+        <ol className={styles.promosList}>
+          {promos.map((p) => (
+            <li key={p.titulo} className={styles.promoItem}>
+              <strong>{p.titulo}:</strong> {p.texto}
+            </li>
+          ))}
+        </ol>
+
+        <p className={styles.infoNota}>
+          * Excepto Alfabetización en Robótica y Programación, con clases de 60
+          minutos.
+          <br />
+          ** Excepto Robótica Educativa Avanzada, que requiere conocimientos
+          previos de robótica.
+        </p>
       </div>
 
       {mounted && activoConCard && (

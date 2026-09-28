@@ -6,10 +6,10 @@ import styles from "./FAQ.module.css";
 // Placeholder editable: reemplazá preguntas y respuestas por las definitivas.
 const preguntas = [
   {
-    pregunta: "¿Cuándo empiezan las clases?",
-    respuesta:
-      "El inicio de clases es el 18 de agosto de 2026. La inscripción está abierta todo el año, así que podés sumarte en cualquier momento.",
-  },
+  pregunta: "¿Puedo anotarme si las clases ya empezaron?",
+  respuesta:
+    "Sí. Las clases comenzaron el 18 de agosto de 2026, pero la inscripción está abierta todo el año, así que podés sumarte en cualquier momento.",
+},
 {
   pregunta: "¿Es necesario tener conocimientos previos?",
   respuesta:
@@ -28,7 +28,7 @@ const preguntas = [
   {
     pregunta: "¿Cuánto dura cada clase?",
     respuesta:
-      "Las clases son presenciales y duran 90 minutos.",
+  "Las clases son presenciales y duran 90 minutos, excepto Alfabetización en Robótica y Programación (4 a 6 años), que dura 60 minutos.",
   },
   {
     pregunta: "¿Tengo que llevar mi propia PC o herramientas?",
