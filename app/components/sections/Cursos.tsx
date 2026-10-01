@@ -138,6 +138,7 @@ const cursos: Curso[] = [
         "Miércoles 16:30-18:00hs",
         "Jueves 16:30-18:00hs",
         "Viernes 16:30-18:00hs",
+        "Sábado 10:30hs-12:00hs"
       ],
     },
   },
@@ -166,7 +167,11 @@ const cursos: Curso[] = [
       edad: "4 a 6 años",
       inscripcion: "$ 30.000",
       cuota: "$ 65.000",
-      horarios: ["Martes 15:00-16:00hs", "Miércoles 15:00-16:00hs"],
+      horarios: [
+  "Martes 15:00-16:00hs",
+  "Miércoles 10:30-11:30hs",
+  "Miércoles 15:00-16:00hs",
+],
     },
   },
   {
